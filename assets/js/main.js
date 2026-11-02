@@ -256,6 +256,7 @@ const projectsData = [
       'Role-based permissions and managerial approval flows'
     ],
     links: {
+      playStore: 'https://play.google.com/store/apps/details?id=com.bestincity.dealspro&hl=en',
       github: 'https://github.com/Abhijeet03s/BiC-App'
     },
     icon: 'layers',
@@ -447,6 +448,7 @@ const projectsData = [
       'Study material, syllabus, and assignment distribution'
     ],
     links: {
+      playStore: 'https://play.google.com/store/apps/details?id=com.school.app.dnm&hl=en',
       github: 'https://github.com/dnm-tryeno/SchoolApp'
     },
     icon: 'graduation-cap',
@@ -474,6 +476,7 @@ const projectsData = [
       'PIN code security and automatic daily cloud backup'
     ],
     links: {
+      playStore: 'https://play.google.com/store/apps/details?id=com.tryeno.udharbook&hl=en',
       github: 'https://github.com/dnm-tryeno/UdharKhata'
     },
     icon: 'credit-card',
@@ -528,6 +531,7 @@ const projectsData = [
       'Children-friendly colorful yet calming illustrations'
     ],
     links: {
+      playStore: 'https://play.google.com/store/apps/details?id=com.dpm.tucktales&hl=en',
       github: 'https://github.com/dnm-tryeno/little_dreamers'
     },
     icon: 'book-open',

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dina Nath Maurya | Senior Flutter & Mobile App Engineer</title>
+  
+  <meta name="description" content="Senior Flutter Developer with 6.5+ years of experience building, deploying, and maintaining high-performance Android & iOS applications. Specialized in Flutter, React Native, Riverpod, Agora RTC, Socket.io, and Clean Architecture.">
+  <meta name="author" content="Dina Nath Maurya">
+  <meta name="keywords" content="Dina Nath Maurya, Flutter Developer, Mobile App Engineer, React Native, iOS Developer, Android Developer, Riverpod, Agora SDK, Freelance Mobile Developer, Varanasi, India">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dina Nath Maurya | Senior Flutter & Mobile App Engineer">
+  <meta property="og:description" content="6.5+ years of mobile app engineering experience delivering 15+ production apps on Apple App Store and Google Play.">
+  <meta property="og:image" content="assets/images/dina-profile.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#070b14] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-white relative overflow-x-hidden">
+
+  <!-- Background Ambient Lights & Grid -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+  <div class="fixed top-[-15%] left-[20%] w-[550px] h-[550px] bg-sky-600/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand / Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-xl p-[2px] bg-gradient-to-tr from-sky-500 via-cyan-400 to-violet-500 shadow-md">
+          <img src="assets/images/dina-profile.png" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-[10px]">
+          <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[#070b14]"></span>
+        </div>
+        <div>
+          <span class="font-bold text-lg text-white group-hover:text-cyan-400 transition-colors font-heading block leading-tight">
+            Dina Nath Maurya
+          </span>
+          <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block"></span>
+            Senior Flutter Engineer
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+        <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button onclick="copyEmail()" class="text-xs font-mono px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyan-500/50 text-slate-300 hover:text-white flex items-center gap-2 transition-all">
+          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          <span>Copy Email</span>
+        </button>
+
+        <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" class="text-xs font-semibold px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white shadow-lg shadow-sky-600/25 flex items-center gap-2 transition-all hover:scale-105">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download CV</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-white p-2 rounded-xl bg-slate-900/80 border border-slate-800">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden glass border-b border-slate-800 p-6 space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <span class="text-xs font-mono uppercase text-slate-400">Navigation Menu</span>
+        <button id="mobile-menu-close" class="text-slate-400 hover:text-white p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="flex flex-col space-y-3 font-medium">
+        <a href="#about" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">About</a>
+        <a href="#experience" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Experience</a>
+        <a href="#projects" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Featured Projects</a>
+        <a href="#skills" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Technical Skills</a>
+        <a href="#contact" class="mobile-nav-link text-slate-300 hover:text-cyan-400 py-1">Contact Dina</a>
+      </div>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2.5">
+        <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" class="w-full text-center text-xs font-semibold py-2.5 rounded-xl bg-sky-600 text-white">
+          Download Resume (PDF)
+        </a>
+        <button onclick="copyEmail()" class="w-full text-center text-xs font-mono py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300">
+          Copy dnm.dpm@gmail.com
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrap -->
+  <main class="relative z-10 pt-28">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-medium font-mono shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Available for Senior Mobile Roles & High-Impact Contracts</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-heading leading-[1.12]">
+            Engineering Scalable <br>
+            <span class="text-gradient-flutter">Mobile Experiences</span> <br>
+            for Global Products.
+          </h1>
+
+          <!-- Summary Paragraph -->
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+            Hello, I'm <strong class="text-white font-semibold">Dina Nath Maurya</strong>. A Senior Mobile Engineer with <span class="text-cyan-400 font-semibold">6.5+ years of experience</span> crafting production-ready <span class="text-white font-medium">Flutter</span> & <span class="text-white font-medium">React Native</span> applications for iOS & Android. Experienced in Japanese Agile delivery, real-time video architectures (Agora RTC), Google Maps live tracking, and full App Store & Play Store lifecycles.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 flex items-center gap-2 transition-all hover:scale-105">
+              <span>View 15+ Projects</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+
+            <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" class="px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-semibold text-sm border border-slate-700 hover:border-slate-600 flex items-center gap-2 transition-all hover:scale-105">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download Resume</span>
+            </a>
+
+            <a href="#contact" class="px-5 py-3.5 text-sm font-semibold text-slate-400 hover:text-white transition-colors">
+              Get in Touch →
+            </a>
+          </div>
+
+          <!-- Social Links Quick Bar -->
+          <div class="flex items-center gap-5 pt-4 text-xs font-mono text-slate-400">
+            <span class="text-slate-500">Connect:</span>
+            <a href="https://github.com/dnm-tryeno" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/dina-nath-maurya-0a738282/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <span class="text-slate-600">|</span>
+            <span class="text-slate-400">📍 Varanasi, India (Remote)</span>
+          </div>
+
+        </div>
+
+        <!-- Hero Avatar & Badges -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+          <div class="relative w-72 sm:w-84 md:w-96 aspect-square">
+            
+            <!-- Glow background -->
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-sky-600/30 to-violet-600/30 blur-2xl -z-10 animate-pulse-glow"></div>
+
+            <!-- Profile Frame -->
+            <div class="w-full h-full rounded-3xl p-2 bg-gradient-to-b from-sky-500/40 via-cyan-500/20 to-slate-800/80 border border-slate-700/60 shadow-2xl relative overflow-hidden group">
+              <img src="assets/images/dina-profile.png" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-2xl group-hover:scale-102 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#070b14]/70 via-transparent to-transparent"></div>
+
+              <!-- Quick Overlay Tag -->
+              <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl glass border border-white/10 flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold text-white font-heading">Dina Nath Maurya</p>
+                  <p class="text-[11px] text-cyan-300 font-mono">6.5+ Yrs Mobile Engineering</p>
+                </div>
+                <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs font-mono">
+                  PRO
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 1: Flutter -->
+            <div class="absolute -top-4 -left-6 px-3.5 py-2 rounded-xl glass border border-cyan-500/40 shadow-xl flex items-center gap-2.5 animate-float-slow">
+              <div class="w-7 h-7 rounded-lg bg-sky-500/20 flex items-center justify-center text-cyan-400 font-bold text-xs">
+                ⚡
+              </div>
+              <div class="text-left">
+                <p class="text-[10px] text-slate-400 font-mono leading-none">Specialist</p>
+                <p class="text-xs font-bold text-white font-heading">Flutter & Dart</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Store Releases -->
+            <div class="absolute -bottom-4 -left-4 px-3.5 py-2 rounded-xl glass border border-emerald-500/40 shadow-xl flex items-center gap-2.5 animate-float-delayed">
+              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs">
+                🚀
+              </div>
+              <div class="text-left">
+                <p class="text-[10px] text-slate-400 font-mono leading-none">Apple & Google</p>
+                <p class="text-xs font-bold text-white font-heading">15+ Shipped Apps</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 3: Architecture -->
+            <div class="absolute top-1/2 -right-6 px-3.5 py-2 rounded-xl glass border border-violet-500/40 shadow-xl flex items-center gap-2.5 animate-float-slow">
+              <div class="w-7 h-7 rounded-lg bg-violet-500/20 flex items-center justify-center text-violet-400 font-bold text-xs">
+                ⚙️
+              </div>
+              <div class="text-left">
+                <p class="text-[10px] text-slate-400 font-mono leading-none">Architecture</p>
+                <p class="text-xs font-bold text-white font-heading">Riverpod & Clean</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KEY METRICS BAR -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-12 border-t border-slate-800/80">
+        
+        <div class="p-5 rounded-2xl glass-card border border-slate-800 text-center">
+          <p class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300 font-heading">6.5+</p>
+          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">Years Production Exp.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl glass-card border border-slate-800 text-center">
+          <p class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-300 font-heading">15+</p>
+          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">Shipped Store Apps</p>
+        </div>
+
+        <div class="p-5 rounded-2xl glass-card border border-slate-800 text-center">
+          <p class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-violet-300 font-heading">100K+</p>
+          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">End Users Impacted</p>
+        </div>
+
+        <div class="p-5 rounded-2xl glass-card border border-slate-800 text-center">
+          <p class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-300 font-heading">99.9%</p>
+          <p class="text-xs sm:text-sm font-medium text-slate-400 mt-1">Crash-Free Sessions</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <p class="text-xs font-mono uppercase tracking-widest text-cyan-400">Professional Background</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">About Dina Nath Maurya</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Column 1: Core Philosophy -->
+          <div class="glass-card rounded-2xl p-7 border border-slate-800 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl">
+              📱
+            </div>
+            <h3 class="text-xl font-bold text-white font-heading">Mobile-First Excellence</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              I specialize in bridging the gap between elegant UI/UX design and scalable engineering. Every application I engineer is optimized for 60fps/120fps performance, battery efficiency, and offline resilience.
+            </p>
+            <ul class="text-xs font-mono text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center gap-2">✓ Clean Architecture & Repository Pattern</li>
+              <li class="flex items-center gap-2">✓ Advanced Riverpod & State Management</li>
+              <li class="flex items-center gap-2">✓ Seamless iOS & Android Native Interop</li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Global Client Collaboration -->
+          <div class="glass-card rounded-2xl p-7 border border-slate-800 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center font-bold text-xl">
+              🌏
+            </div>
+            <h3 class="text-xl font-bold text-white font-heading">International Client Experience</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Experienced working with Japanese enterprises (Del-Qui Japan) and multinational product squads. Well-versed in Agile ceremonies, async international collaboration, strict code review cycles, and zero-compromise quality bars.
+            </p>
+            <ul class="text-xs font-mono text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center gap-2">✓ Agile / Scrum Sprint Cadence</li>
+              <li class="flex items-center gap-2">✓ Cross-timezone async communications</li>
+              <li class="flex items-center gap-2">✓ Multi-language & Localization (i18n)</li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Full Lifecycle Delivery -->
+          <div class="glass-card rounded-2xl p-7 border border-slate-800 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-xl">
+              🚀
+            </div>
+            <h3 class="text-xl font-bold text-white font-heading">End-to-End Release Management</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              From whiteboard architectural diagrams to App Store Connect and Google Play Console release channels. I handle Apple certificates, provisioning profiles, privacy compliance, TestFlight betas, and automated CI/CD builds.
+            </p>
+            <ul class="text-xs font-mono text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center gap-2">✓ App Store & Play Store Submissions</li>
+              <li class="flex items-center gap-2">✓ GitHub Actions & Bitrise Pipelines</li>
+              <li class="flex items-center gap-2">✓ Crashlytics & Real-time Telemetry</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section id="experience" class="py-20 border-t border-slate-800/80 bg-slate-950/40 relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <p class="text-xs font-mono uppercase tracking-widest text-cyan-400">Career History</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">Work Experience</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="relative border-l border-slate-800 ml-4 md:ml-8 space-y-12">
+          
+          <!-- Experience Item 1: Tryeno India -->
+          <div class="relative pl-8 md:pl-10 group">
+            <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-[#070b14] border-2 border-cyan-400 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+              <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/40 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white font-heading">
+                  Tryeno India
+                </h3>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800">
+                  June 2021 – Present (Ongoing)
+                </span>
+              </div>
+              <p class="text-sm font-semibold text-cyan-400 mb-4">Senior Flutter Developer & React Native Engineer</p>
+
+              <ul class="space-y-2 text-sm text-slate-300 leading-relaxed mb-5">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-cyan-400 font-bold">›</span>
+                  <span>Architected and delivered multiple commercial Android & iOS applications using Flutter and Dart with Clean Architecture principles.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-cyan-400 font-bold">›</span>
+                  <span>Integrated complex third-party SDKs including Agora RTC (video/audio calls), Google Maps Geolocation, Socket.io, Stripe Payments, and Firebase.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-cyan-400 font-bold">›</span>
+                  <span>Built and consumed REST APIs, collaborated on database schema design (MySQL / Eloquent ORM), authentication middleware, and validation rules.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-cyan-400 font-bold">›</span>
+                  <span>Managed end-to-end releases on Apple App Store Connect and Google Play Console, reducing production crashes by 40% through strict QA and CI/CD.</span>
+                </li>
+              </ul>
+
+              <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Flutter</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">React Native</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Riverpod</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Firebase</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Socket.io</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">MySQL / REST</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Item 2: Del-Qui Japan -->
+          <div class="relative pl-8 md:pl-10 group">
+            <div class="absolute -left-3.5 top-1.5 w-7 h-7 rounded-full bg-[#070b14] border-2 border-violet-400 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
+              <span class="w-2.5 h-2.5 rounded-full bg-violet-400"></span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 hover:border-violet-500/40 transition-all">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h3 class="text-xl font-bold text-white font-heading">
+                  Del-Qui Japan
+                </h3>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-violet-950/80 text-violet-300 border border-violet-800">
+                  November 2023 – March 2026
+                </span>
+              </div>
+              <p class="text-sm font-semibold text-violet-400 mb-4">Flutter Developer (Client Projects - Japan)</p>
+
+              <ul class="space-y-2 text-sm text-slate-300 leading-relaxed mb-5">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-violet-400 font-bold">›</span>
+                  <span>Developed and scaled interactive real-time mobile applications for Japanese market users using Flutter and Riverpod.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-violet-400 font-bold">›</span>
+                  <span>Engineered virtual drinking room experiences with Agora Video RTC SDK, featuring dynamic seating, multi-channel voice, and gift animations.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-violet-400 font-bold">›</span>
+                  <span>Implemented turn-by-turn live driver tracking with Google Maps and Socket.io for food delivery platforms.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-violet-400 font-bold">›</span>
+                  <span>Oversaw iOS deployment certificates, provisioning profiles, TestFlight feedback iterations, and Google Play Store rollouts.</span>
+                </li>
+              </ul>
+
+              <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800">
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Flutter</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Agora RTC</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Google Maps</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Stripe</span>
+                <span class="text-xs px-2.5 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">iOS & TestFlight</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SHOWCASE -->
+    <section id="projects" class="py-20 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <p class="text-xs font-mono uppercase tracking-widest text-cyan-400">Shipped Software & Applications</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">Featured Projects Showcase</h2>
+          <p class="text-sm text-slate-400">Selected commercial applications, store releases, and open-source tooling crafted by Dina.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Filter Buttons Bar -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button data-filter="all" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-cyan-600 text-white border border-cyan-500 shadow-md transition-all">
+            All Projects (9+)
+          </button>
+          <button data-filter="featured" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 border border-slate-700 hover:text-white transition-all">
+            ★ Featured Apps
+          </button>
+          <button data-filter="store" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 border border-slate-700 hover:text-white transition-all">
+            🚀 Live on Stores
+          </button>
+          <button data-filter="flutter" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 border border-slate-700 hover:text-white transition-all">
+            ⚡ Flutter & Dart
+          </button>
+          <button data-filter="tools" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/80 text-slate-400 border border-slate-700 hover:text-white transition-all">
+            🛠 Utilities & Tools
+          </button>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Injected via main.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="py-20 border-t border-slate-800/80 bg-slate-950/40 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <p class="text-xs font-mono uppercase tracking-widest text-cyan-400">Capabilities</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">Technical Skills & Expertise</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Category 1: Mobile Frontend -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-sky-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg">📱</span>
+              <h3 class="text-lg font-bold text-white font-heading">Mobile Development</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300">Flutter</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300">Dart</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">React Native</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Android SDK</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">iOS (Swift Basics)</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Responsive UI</span>
+            </div>
+          </div>
+
+          <!-- Category 2: State & Architecture -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center font-bold text-lg">🏛️</span>
+              <h3 class="text-lg font-bold text-white font-heading">State & Architecture</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300">Riverpod 2.x</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-violet-300">Provider</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Clean Architecture</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Repository Pattern</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Freezed & CodeGen</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">AutoRoute</span>
+            </div>
+          </div>
+
+          <!-- Category 3: APIs & Real-time -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg">⚡</span>
+              <h3 class="text-lg font-bold text-white font-heading">APIs & Real-Time</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300">Agora RTC SDK</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-emerald-300">Socket.io</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">REST APIs</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Dio & Interceptors</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Google Maps API</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">WebSockets</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Cloud & Backend -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg">☁️</span>
+              <h3 class="text-lg font-bold text-white font-heading">Cloud & Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300">Firebase Auth</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-amber-300">Firestore & FCM</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">MySQL</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Laravel Eloquent</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">SQLite & Hive</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Stripe Integration</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Store Deployments & CI/CD -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center font-bold text-lg">📦</span>
+              <h3 class="text-lg font-bold text-white font-heading">Store Releases & CI/CD</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-pink-300">Apple App Store Connect</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-pink-300">Google Play Console</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">GitHub Actions</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Bitrise CI/CD</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">TestFlight Distribution</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Provisioning & Certs</span>
+            </div>
+          </div>
+
+          <!-- Category 6: Developer Workflow -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg">🛠️</span>
+              <h3 class="text-lg font-bold text-white font-heading">Developer Workflows</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-cyan-300">Git & GitHub</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Sourcetree</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Postman API Testing</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Figma UI Inspection</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Vercel Deployment</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200">Agile / JIRA / Trello</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <section id="contact" class="py-20 border-t border-slate-800/80 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <p class="text-xs font-mono uppercase tracking-widest text-cyan-400">Let's Connect</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">Ready to Build Your Next Mobile App?</h2>
+          <p class="text-sm text-slate-400">Whether you need a Flutter architect, a mobile lead, or full-stack mobile development from scratch, I'm available to talk.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Info Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <!-- Email Box -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800">
+              <div class="flex items-center gap-4 mb-3">
+                <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-cyan-400 flex items-center justify-center font-bold">
+                  ✉️
+                </div>
+                <div>
+                  <p class="text-xs font-mono text-slate-400">Direct Email</p>
+                  <a href="mailto:dnm.dpm@gmail.com" class="text-base font-bold text-white hover:text-cyan-400 transition-colors">
+                    dnm.dpm@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button onclick="copyEmail()" class="w-full text-xs font-mono py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-400 border border-slate-800 flex items-center justify-center gap-2 transition-all">
+                <span>Copy Email Address</span>
+              </button>
+            </div>
+
+            <!-- Location & Availability -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800">
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold">
+                  📍
+                </div>
+                <div>
+                  <p class="text-xs font-mono text-slate-400">Location & Work Mode</p>
+                  <p class="text-sm font-bold text-white">Sarnath, Varanasi, UP, India</p>
+                  <p class="text-xs text-emerald-400 font-mono mt-0.5">● Open to Remote Worldwide</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-3">
+              <p class="text-xs font-mono uppercase text-slate-400">Official Profiles</p>
+              <div class="flex flex-col gap-2.5">
+                <a href="https://github.com/dnm-tryeno" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl bg-slate-900 hover:bg-slate-800/80 text-sm font-medium text-slate-200 transition-colors">
+                  <span class="flex items-center gap-2.5">
+                    <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                    <span>github.com/dnm-tryeno</span>
+                  </span>
+                  <span class="text-xs text-slate-500 font-mono">View Repos →</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/dina-nath-maurya-0a738282/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl bg-slate-900 hover:bg-slate-800/80 text-sm font-medium text-slate-200 transition-colors">
+                  <span class="flex items-center gap-2.5">
+                    <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.39 9.74v-8.37H5.07v8.37z"/></svg>
+                    <span>LinkedIn Profile</span>
+                  </span>
+                  <span class="text-xs text-slate-500 font-mono">Connect →</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Inquiry Form -->
+          <div class="lg:col-span-7">
+            <div class="glass-card rounded-2xl p-7 sm:p-8 border border-slate-800">
+              <h3 class="text-xl font-bold text-white font-heading mb-2">Send a Message</h3>
+              <p class="text-sm text-slate-400 mb-6">Fill in the details below to start a conversation directly via email.</p>
+
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">Your Name</label>
+                    <input type="text" id="form-name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:border-cyan-500 focus:outline-none transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">Email Address</label>
+                    <input type="email" id="form-email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:border-cyan-500 focus:outline-none transition-colors">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono uppercase text-slate-400 mb-1.5">Message / Project Details</label>
+                  <textarea id="form-message" rows="4" required placeholder="Hi Dina, I'm looking to build a Flutter app for iOS and Android..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:border-cyan-500 focus:outline-none transition-colors"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 flex items-center justify-center gap-2 transition-all hover:scale-[1.01]">
+                  <span>Send Direct Email</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 relative z-10 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+        <span>© <span id="current-year">2026</span> Dina Nath Maurya. All rights reserved.</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-cyan-400 transition-colors">Back to Top ↑</a>
+        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <span>Ready for Vercel</span>
+          <svg class="w-3.5 h-3.5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE PROJECT DETAILS MODAL -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="modal-content glass rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div id="modal-content-body">
+        <!-- Injected dynamically via openProjectModal(id) in main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

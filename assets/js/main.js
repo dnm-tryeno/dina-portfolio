@@ -1,6 +1,6 @@
 /**
  * Dina Nath Maurya - Senior Mobile App Engineer Portfolio
- * Interactive Functionality & Project Catalog
+ * Interactive Functionality, Light Theme Support & Project Catalog
  */
 
 const projectsData = [
@@ -29,7 +29,7 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno'
     },
     icon: 'trophy',
-    color: 'from-amber-500/20 to-orange-600/20',
+    color: 'from-amber-500/10 to-orange-500/10',
     accent: '#f59e0b'
   },
   {
@@ -57,8 +57,8 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno/video_collection_app'
     },
     icon: 'play-circle',
-    color: 'from-red-500/20 to-rose-600/20',
-    accent: '#f43f5e'
+    color: 'from-red-500/10 to-rose-500/10',
+    accent: '#ef4444'
   },
   {
     id: 'jhatpat',
@@ -84,7 +84,7 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno/jhatpat-maintenance-service'
     },
     icon: 'zap',
-    color: 'from-yellow-500/20 to-amber-600/20',
+    color: 'from-yellow-500/10 to-amber-500/10',
     accent: '#eab308'
   },
   {
@@ -111,7 +111,7 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno/shop_keep_flutter_app'
     },
     icon: 'shopping-bag',
-    color: 'from-emerald-500/20 to-teal-600/20',
+    color: 'from-emerald-500/10 to-teal-500/10',
     accent: '#10b981'
   },
   {
@@ -137,8 +137,8 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno'
     },
     icon: 'video',
-    color: 'from-purple-500/20 to-indigo-600/20',
-    accent: '#a855f7'
+    color: 'from-purple-500/10 to-indigo-500/10',
+    accent: '#8b5cf6'
   },
   {
     id: 'food-delivery',
@@ -163,8 +163,8 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno'
     },
     icon: 'truck',
-    color: 'from-cyan-500/20 to-blue-600/20',
-    accent: '#06b6d4'
+    color: 'from-cyan-500/10 to-blue-500/10',
+    accent: '#0284c7'
   },
   {
     id: 'tucktales',
@@ -177,7 +177,7 @@ const projectsData = [
       platforms: 'Android & iOS',
       status: 'Open Source / Portfolio',
       rating: '4.9 ★'
-    ],
+    },
     features: [
       'High-quality voice narration with synchronized word highlights',
       'Custom sleep timer to fade out music and storytelling gradually',
@@ -188,7 +188,7 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno/little_dreamers'
     },
     icon: 'book-open',
-    color: 'from-pink-500/20 to-rose-600/20',
+    color: 'from-pink-500/10 to-rose-500/10',
     accent: '#ec4899'
   },
   {
@@ -213,7 +213,7 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno/UdharKhata'
     },
     icon: 'credit-card',
-    color: 'from-blue-500/20 to-indigo-600/20',
+    color: 'from-blue-500/10 to-indigo-500/10',
     accent: '#3b82f6'
   },
   {
@@ -238,12 +238,12 @@ const projectsData = [
       github: 'https://github.com/dnm-tryeno/QRMaker'
     },
     icon: 'qr-code',
-    color: 'from-violet-500/20 to-purple-600/20',
+    color: 'from-violet-500/10 to-purple-500/10',
     accent: '#8b5cf6'
   }
 ];
 
-// Lucide icon SVG mappings
+// SVG Icon Helper
 function getIconSvg(name, size = 20) {
   const icons = {
     'trophy': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>`,
@@ -255,7 +255,6 @@ function getIconSvg(name, size = 20) {
     'book-open': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
     'credit-card': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`,
     'qr-code': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>`,
-    'external-link': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>`,
     'apple': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-.93.04-2.02.63-2.66 1.38-.56.65-.99 1.7-0.87 2.73 1.05.08 2.06-.52 2.61-1.24Z"/></svg>`,
     'play': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814 13.792 12 3.61 22.186a2.12 2.12 0 0 1-1.22-1.92V3.734c0-.79.46-1.51 1.22-1.92zm11.603 11.603 2.43 2.43-12.06 6.892 9.63-9.322zm0-2.834L5.582 1.261l12.06 6.892-2.43 2.427zm1.414 1.417 4.25 2.429a1.69 1.69 0 0 1 0 2.942l-4.25 2.429-2.37-2.37 2.37-2.43z"/></svg>`,
     'github': `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>`
@@ -263,7 +262,7 @@ function getIconSvg(name, size = 20) {
   return icons[name] || '';
 }
 
-// Render Project Cards
+// Render Project Cards (Light & Dark Friendly)
 function renderProjects(filter = 'all') {
   const container = document.getElementById('projects-grid');
   if (!container) return;
@@ -273,61 +272,61 @@ function renderProjects(filter = 'all') {
     : projectsData.filter(p => p.category.includes(filter));
 
   container.innerHTML = filtered.map(p => `
-    <div class="glass-card rounded-2xl p-6 flex flex-col justify-between group border border-slate-800/80 hover:border-cyan-500/40 relative overflow-hidden transition-all duration-300">
+    <div class="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between group border border-slate-200/90 dark:border-slate-800/80 hover:border-sky-500/50 dark:hover:border-cyan-500/40 relative overflow-hidden transition-all duration-300 bg-white/95 dark:bg-slate-900/80 shadow-sm hover:shadow-xl">
       <!-- Gradient Aura -->
-      <div class="absolute -right-12 -top-12 w-32 h-32 bg-gradient-to-br ${p.color} rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity"></div>
+      <div class="absolute -right-10 -top-10 w-28 h-28 bg-gradient-to-br ${p.color} rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
       
       <div>
         <!-- Card Header -->
-        <div class="flex items-start justify-between gap-4 mb-4 relative z-10">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg" style="background: linear-gradient(135deg, ${p.accent}, #0284c7);">
-            ${getIconSvg(p.icon, 24)}
+        <div class="flex items-start justify-between gap-3 mb-4 relative z-10">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-white shadow-md" style="background: linear-gradient(135deg, ${p.accent}, #0284c7);">
+            ${getIconSvg(p.icon, 22)}
           </div>
-          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-800/90 text-cyan-400 border border-cyan-500/20 font-mono">
+          <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-200 dark:bg-slate-800/90 dark:text-cyan-400 dark:border-cyan-500/20 font-mono">
             ${p.stats.status.includes('Live') ? '● Live' : '★ Featured'}
           </span>
         </div>
 
         <!-- Title & Desc -->
-        <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors mb-2 font-heading">
+        <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-cyan-300 transition-colors mb-2 font-heading leading-snug">
           ${p.title}
         </h3>
-        <p class="text-slate-400 text-sm leading-relaxed mb-5 line-clamp-3">
+        <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 line-clamp-3">
           ${p.shortDesc}
         </p>
 
         <!-- Tech Tags -->
-        <div class="flex flex-wrap gap-1.5 mb-6">
+        <div class="flex flex-wrap gap-1.5 mb-5">
           ${p.tags.slice(0, 4).map(t => `
-            <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-900/80 text-slate-300 border border-slate-700/60 font-mono">
+            <span class="text-[11px] px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 font-mono">
               ${t}
             </span>
           `).join('')}
-          ${p.tags.length > 4 ? `<span class="text-xs px-2 py-0.5 rounded-md bg-slate-800 text-slate-400 font-mono">+${p.tags.length - 4}</span>` : ''}
+          ${p.tags.length > 4 ? `<span class="text-[11px] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-mono">+${p.tags.length - 4}</span>` : ''}
         </div>
       </div>
 
       <!-- Card Actions -->
-      <div class="border-t border-slate-800/80 pt-4 mt-auto flex items-center justify-between relative z-10">
-        <button onclick="openProjectModal('${p.id}')" class="text-sm font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
+      <div class="border-t border-slate-100 dark:border-slate-800/80 pt-3.5 mt-auto flex items-center justify-between relative z-10">
+        <button onclick="openProjectModal('${p.id}')" class="text-xs sm:text-sm font-semibold text-sky-600 hover:text-sky-700 dark:text-cyan-400 dark:hover:text-cyan-300 flex items-center gap-1.5 transition-colors">
           <span>Explore Details</span>
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1.5">
           ${p.links.appStore ? `
-            <a href="${p.links.appStore}" target="_blank" rel="noopener noreferrer" title="View on Apple App Store" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-              ${getIconSvg('apple', 16)}
+            <a href="${p.links.appStore}" target="_blank" rel="noopener noreferrer" title="Apple App Store" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors">
+              ${getIconSvg('apple', 15)}
             </a>
           ` : ''}
           ${p.links.playStore ? `
-            <a href="${p.links.playStore}" target="_blank" rel="noopener noreferrer" title="View on Google Play" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-              ${getIconSvg('play', 14)}
+            <a href="${p.links.playStore}" target="_blank" rel="noopener noreferrer" title="Google Play Store" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors">
+              ${getIconSvg('play', 13)}
             </a>
           ` : ''}
           ${p.links.github ? `
-            <a href="${p.links.github}" target="_blank" rel="noopener noreferrer" title="View GitHub Source" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-              ${getIconSvg('github', 16)}
+            <a href="${p.links.github}" target="_blank" rel="noopener noreferrer" title="GitHub Source" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors">
+              ${getIconSvg('github', 15)}
             </a>
           ` : ''}
         </div>
@@ -347,38 +346,38 @@ window.openProjectModal = function(id) {
 
   modalBody.innerHTML = `
     <!-- Modal Header -->
-    <div class="flex items-start justify-between gap-4 mb-6">
+    <div class="flex items-start justify-between gap-3 mb-5">
       <div class="flex items-center gap-3">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-xl" style="background: linear-gradient(135deg, ${project.accent}, #0284c7);">
-          ${getIconSvg(project.icon, 28)}
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-white shadow-lg shrink-0" style="background: linear-gradient(135deg, ${project.accent}, #0284c7);">
+          ${getIconSvg(project.icon, 26)}
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-white font-heading">${project.title}</h2>
-          <div class="flex items-center gap-2 mt-1">
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 font-mono">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white font-heading">${project.title}</h2>
+          <div class="flex flex-wrap items-center gap-2 mt-1">
+            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 dark:bg-cyan-950/80 dark:text-cyan-300 border border-sky-200 dark:border-cyan-800/80 font-mono">
               ${project.stats.status}
             </span>
-            <span class="text-xs text-slate-400 font-mono">Platform: ${project.stats.platforms}</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">${project.stats.platforms}</span>
           </div>
         </div>
       </div>
-      <button onclick="closeProjectModal()" class="text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800/60 hover:bg-slate-800 transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      <button onclick="closeProjectModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl bg-slate-100 dark:bg-slate-800/60 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
 
     <!-- Description -->
-    <div class="space-y-4 text-slate-300 text-sm leading-relaxed mb-6">
-      <p class="text-base text-slate-200 font-medium">${project.fullDesc}</p>
+    <div class="space-y-3 text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-5">
+      <p class="text-sm sm:text-base text-slate-800 dark:text-slate-200 font-medium">${project.fullDesc}</p>
     </div>
 
     <!-- Key Architecture & Features -->
-    <div class="mb-6 bg-slate-900/60 rounded-xl p-4 border border-slate-800">
-      <h4 class="text-xs uppercase tracking-wider font-semibold text-cyan-400 font-mono mb-3">Key Technical Features</h4>
-      <ul class="space-y-2 text-sm text-slate-300">
+    <div class="mb-5 bg-slate-50 dark:bg-slate-900/60 rounded-xl p-4 border border-slate-200 dark:border-slate-800">
+      <h4 class="text-xs uppercase tracking-wider font-semibold text-sky-700 dark:text-cyan-400 font-mono mb-2.5">Key Technical Capabilities</h4>
+      <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
         ${project.features.map(f => `
           <li class="flex items-start gap-2">
-            <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+            <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
             <span>${f}</span>
           </li>
         `).join('')}
@@ -386,11 +385,11 @@ window.openProjectModal = function(id) {
     </div>
 
     <!-- Technology Stack -->
-    <div class="mb-8">
-      <h4 class="text-xs uppercase tracking-wider font-semibold text-slate-400 font-mono mb-3">Tech Stack & Libraries</h4>
+    <div class="mb-6">
+      <h4 class="text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 font-mono mb-2.5">Tech Stack & Architecture</h4>
       <div class="flex flex-wrap gap-2">
         ${project.tags.map(t => `
-          <span class="px-3 py-1 rounded-lg bg-slate-800/90 text-slate-200 border border-slate-700 text-xs font-mono">
+          <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-xs font-mono">
             ${t}
           </span>
         `).join('')}
@@ -398,26 +397,26 @@ window.openProjectModal = function(id) {
     </div>
 
     <!-- Action Buttons -->
-    <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-800">
+    <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t border-slate-200 dark:border-slate-800">
       ${project.links.appStore ? `
-        <a href="${project.links.appStore}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all hover:scale-105">
-          ${getIconSvg('apple', 18)}
+        <a href="${project.links.appStore}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm shadow-md transition-all">
+          ${getIconSvg('apple', 16)}
           <span>App Store Link</span>
         </a>
       ` : ''}
       ${project.links.playStore ? `
-        <a href="${project.links.playStore}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all hover:scale-105">
-          ${getIconSvg('play', 16)}
+        <a href="${project.links.playStore}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm shadow-md transition-all">
+          ${getIconSvg('play', 15)}
           <span>Google Play Link</span>
         </a>
       ` : ''}
       ${project.links.github ? `
-        <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-medium text-sm transition-all hover:scale-105">
-          ${getIconSvg('github', 18)}
-          <span>View Repository</span>
+        <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs sm:text-sm shadow-md transition-all">
+          ${getIconSvg('github', 16)}
+          <span>View Source</span>
         </a>
       ` : ''}
-      <button onclick="closeProjectModal()" class="ml-auto text-sm text-slate-400 hover:text-white px-4 py-2">
+      <button onclick="closeProjectModal()" class="ml-auto text-xs sm:text-sm text-slate-500 hover:text-slate-900 dark:hover:text-white px-3 py-2">
         Close
       </button>
     </div>
@@ -435,45 +434,87 @@ window.closeProjectModal = function() {
   }
 };
 
+// Theme Management (Default: Light)
+window.initTheme = function() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+};
+
+window.toggleTheme = function() {
+  const isDark = document.documentElement.classList.contains('dark');
+  const newTheme = isDark ? 'light' : 'dark';
+  applyTheme(newTheme);
+  localStorage.setItem('theme', newTheme);
+  showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`);
+};
+
+function applyTheme(theme) {
+  const toggleIcon = document.getElementById('theme-toggle-icon');
+  const mobileToggleIcon = document.getElementById('mobile-theme-toggle-icon');
+  const themeLabel = document.getElementById('theme-label');
+
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+    if (toggleIcon) toggleIcon.innerHTML = `☀️`;
+    if (mobileToggleIcon) mobileToggleIcon.innerHTML = `☀️`;
+    if (themeLabel) themeLabel.textContent = 'Light Mode';
+  } else {
+    document.documentElement.classList.remove('dark');
+    if (toggleIcon) toggleIcon.innerHTML = `🌙`;
+    if (mobileToggleIcon) mobileToggleIcon.innerHTML = `🌙`;
+    if (themeLabel) themeLabel.textContent = 'Dark Mode';
+  }
+}
+
 // Toast notification helper
 function showToast(message, icon = '✓') {
   let toast = document.getElementById('global-toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'global-toast';
-    toast.className = 'fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3.5 rounded-2xl bg-slate-900/95 border border-cyan-500/40 text-white shadow-2xl text-sm font-medium backdrop-blur-md transition-all duration-300 transform translate-y-20 opacity-0';
+    toast.className = 'fixed bottom-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900 text-white shadow-2xl text-xs sm:text-sm font-medium backdrop-blur-md transition-all duration-300 transform translate-y-20 opacity-0 border border-slate-700';
     document.body.appendChild(toast);
   }
 
-  toast.innerHTML = `<span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs">${icon}</span><span>${message}</span>`;
+  toast.innerHTML = `<span class="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-xs">${icon}</span><span>${message}</span>`;
   toast.classList.remove('translate-y-20', 'opacity-0');
 
   setTimeout(() => {
     toast.classList.add('translate-y-20', 'opacity-0');
-  }, 3200);
+  }, 3000);
 }
 
 // Copy email to clipboard
 window.copyEmail = function() {
   const email = 'dnm.dpm@gmail.com';
   navigator.clipboard.writeText(email).then(() => {
-    showToast('Email copied to clipboard: ' + email);
+    showToast('Email copied: ' + email);
   }).catch(() => {
     showToast('Contact: ' + email);
   });
 };
 
-// Filter Button Click Handlers
+// Copy phone to clipboard
+window.copyPhone = function() {
+  const phone = '+919793953764';
+  navigator.clipboard.writeText(phone).then(() => {
+    showToast('Phone number copied: +91 97939 53764');
+  }).catch(() => {
+    showToast('Call: +91 97939 53764');
+  });
+};
+
+// Filter Button Handlers
 function setupFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-cyan-600', 'text-white', 'border-cyan-500');
-        b.classList.add('bg-slate-800/80', 'text-slate-400', 'border-slate-700');
+        b.classList.remove('bg-sky-600', 'text-white', 'border-sky-500', 'shadow-sm');
+        b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-400', 'border-slate-200', 'dark:border-slate-700');
       });
-      btn.classList.add('bg-cyan-600', 'text-white', 'border-cyan-500');
-      btn.classList.remove('bg-slate-800/80', 'text-slate-400', 'border-slate-700');
+      btn.classList.add('bg-sky-600', 'text-white', 'border-sky-500', 'shadow-sm');
+      btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-400', 'border-slate-200', 'dark:border-slate-700');
 
       const filter = btn.getAttribute('data-filter') || 'all';
       renderProjects(filter);
@@ -499,7 +540,6 @@ function setupMobileMenu() {
     });
   }
 
-  // Close when clicking nav links
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -508,7 +548,7 @@ function setupMobileMenu() {
   });
 }
 
-// Contact form handler
+// Contact Form Handler
 function setupContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -522,28 +562,24 @@ function setupContactForm() {
     const mailtoUrl = `mailto:dnm.dpm@gmail.com?subject=${encodeURIComponent('Inquiry from ' + name + ' via Portfolio')}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\nMessage:\n' + message)}`;
     
     window.location.href = mailtoUrl;
-    showToast('Opening your email client to send message...');
+    showToast('Opening your email client...');
     form.reset();
   });
 }
 
-// Close modal on Escape key
+// Close modal on Escape
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeProjectModal();
-  }
+  if (e.key === 'Escape') closeProjectModal();
 });
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   renderProjects('all');
   setupFilters();
   setupMobileMenu();
   setupContactForm();
 
-  // Update footer year
   const yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });

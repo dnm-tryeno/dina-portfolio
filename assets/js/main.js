@@ -237,8 +237,8 @@ const projectsData = [
   },
   {
     id: 'bic-app',
-    title: 'BiC-App – Business Intelligence & Collaboration',
-    category: ['client', 'flutter'],
+    title: 'BestinCity (BiC-App DealsPro)',
+    category: ['store', 'client', 'flutter'],
     ownership: 'Client Project',
     clientName: 'Enterprise Client (Abhijeet03s)',
     shortDesc: 'Enterprise mobile platform for internal business workflows, field report submissions, and team collaboration.',
@@ -246,7 +246,7 @@ const projectsData = [
     tags: ['Flutter', 'Dart', 'Clean Architecture', 'Offline Caching', 'Enterprise'],
     stats: {
       platforms: 'iOS & Android',
-      status: 'Production Client Project',
+      status: 'Live on Google Play Store',
       rating: 'Enterprise'
     },
     features: [
@@ -384,7 +384,7 @@ const projectsData = [
     tags: ['Flutter', 'Network Sockets', 'Speedtest Engine', 'Gauges & Charts'],
     stats: {
       platforms: 'Android',
-      status: 'Published Product',
+      status: 'Live on Google Play Store',
       rating: '4.8 ★'
     },
     features: [
@@ -411,7 +411,7 @@ const projectsData = [
     tags: ['Flutter', 'Firebase', 'Rich Text Editor', 'Cloud Storage'],
     stats: {
       platforms: 'iOS & Android',
-      status: 'Published Product',
+      status: 'Live on Google Play Store',
       rating: '4.7 ★'
     },
     features: [
@@ -429,8 +429,8 @@ const projectsData = [
   },
   {
     id: 'school-app',
-    title: 'SchoolApp & Coaching Management',
-    category: ['own', 'flutter'],
+    title: 'Smart School App & Coaching',
+    category: ['store', 'own', 'flutter'],
     ownership: 'Proprietary Product',
     clientName: 'EdTech Product (dnm-tryeno)',
     shortDesc: 'Complete institutional management app for schools and coaching centers with attendance, online video classes, and fee ledger.',
@@ -438,7 +438,7 @@ const projectsData = [
     tags: ['Flutter', 'Live Video', 'Firebase', 'Attendance Management', 'Push Alerts'],
     stats: {
       platforms: 'Android & iOS',
-      status: 'Published Product',
+      status: 'Live on Google Play Store',
       rating: '4.8 ★'
     },
     features: [
@@ -458,7 +458,7 @@ const projectsData = [
   {
     id: 'udharkhata',
     title: 'UdharKhata – Digital Credit Book',
-    category: ['own', 'flutter'],
+    category: ['store', 'own', 'flutter'],
     ownership: 'Proprietary Product',
     clientName: 'Fintech Product (dnm-tryeno)',
     shortDesc: 'Digital credit/debit ledger app for small businesses and individuals to maintain transaction logs and send automated WhatsApp payment reminders.',
@@ -466,7 +466,7 @@ const projectsData = [
     tags: ['Flutter', 'Local DB', 'Cloud Sync', 'SMS/WhatsApp Reminders'],
     stats: {
       platforms: 'Android',
-      status: 'Published Product',
+      status: 'Live on Google Play Store',
       rating: '4.7 ★'
     },
     features: [
@@ -511,9 +511,37 @@ const projectsData = [
     accent: '#8b5cf6'
   },
   {
+    id: 'invoice-app',
+    title: 'Invoice – Quick Billing & PDF Maker',
+    category: ['store', 'own', 'flutter'],
+    ownership: 'Proprietary Product',
+    clientName: 'Billing SaaS (dnm-tryeno)',
+    shortDesc: 'Fast, lightweight business invoicing and bill generation app with PDF exports, tax calculation, and WhatsApp sharing.',
+    fullDesc: 'A straightforward, reliable billing and invoice application allowing small business owners and freelancers to generate, print, and share professional PDF invoices with custom tax, discounts, and item catalogs.',
+    tags: ['Flutter', 'PDF Generator', 'Local Storage', 'Billing', 'Play Store'],
+    stats: {
+      platforms: 'Android',
+      status: 'Live on Google Play Store',
+      rating: '4.8 ★'
+    },
+    features: [
+      'Instant professional PDF invoice generation in one tap',
+      'Direct WhatsApp and email invoice sharing with clients',
+      'Client contact directory and quick billing item presets',
+      'Tax, discount, and grand total calculations'
+    ],
+    links: {
+      playStore: 'https://play.google.com/store/apps/details?id=com.tryeno.invoice_app&hl=en',
+      github: 'https://github.com/dnm-tryeno/Invoice-App'
+    },
+    icon: 'credit-card',
+    color: 'from-sky-500/10 to-indigo-500/10',
+    accent: '#0284c7'
+  },
+  {
     id: 'tucktales',
     title: 'TuckTales – Bedtime Stories for Kids',
-    category: ['own', 'flutter'],
+    category: ['store', 'own', 'flutter'],
     ownership: 'Proprietary Product',
     clientName: 'Tryeno HQ / Little Dreamers',
     shortDesc: 'Soothing storybook application for children featuring bedtime stories, realistic Text-to-Speech (TTS) narration, and gentle ambient soundscapes.',
@@ -521,7 +549,7 @@ const projectsData = [
     tags: ['Flutter', 'TTS Audio Engine', 'Audio Players', 'Clean UI', 'Dart'],
     stats: {
       platforms: 'Android & iOS',
-      status: 'Open Source Product',
+      status: 'Live on Google Play Store',
       rating: '4.9 ★'
     },
     features: [

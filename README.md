@@ -73,17 +73,25 @@ dina-portfolio/
 
 ---
 
-## 🌟 Highlighted Projects in Portfolio
+## 🌟 Verified Production Applications (10 Live Apps + 4 Client Systems)
 
-1. **FurryCat – Tournament & Esports Ecosystem** (Live on Apple App Store & Google Play)
-2. **All Video Saver & VidPlayer** (Apple App Store Approved / Ready for Distribution)
-3. **Jhatpat Maintenance & Electrician** (Live on Google Play, multi-role Customer/Technician/Admin)
-4. **Any Type Shop – POS & Inventory** (Live on Google Play, offline-first billing & PDF invoices)
-5. **Online Drinking App – Video Room Chat** (Del-Qui Japan, Agora RTC SDK real-time rooms)
-6. **Food Delivery & Real-time Courier System** (Del-Qui Japan, Google Maps & Socket.io)
-7. **TuckTales – Bedtime Stories for Kids** (Calming children narration, TTS audio engine)
-8. **UdharKhata – Digital Credit Book** (Small business ledger & WhatsApp reminders)
-9. **Pdfix & QR Code Tools Studio** (PDF utility suite and dynamic QR generator)
+### 📱 Live Store Applications (Apple App Store & Google Play):
+1. **FurryCat – Tournament & Esports Ecosystem** (Live on Apple App Store & Google Play • `com.cricket.captain.expense.mgmt`)
+2. **JHATPAT Service – 24x7 Electrician & Maintenance** (Live on Google Play • `com.service.jhatpat.electrician`)
+3. **Shopkeep – Any Type Shop POS & Inventory** (Live on Google Play • `com.shop.keep.dnm`)
+4. **Smart School App & Coaching Suite** (Live on Google Play • `com.school.app.dnm`)
+5. **UdharKhata – Digital Credit Book** (Live on Google Play • `com.tryeno.udharbook`)
+6. **Invoice – Quick Billing & PDF Maker** (Live on Google Play • `com.tryeno.invoice_app`)
+7. **TuckTales – Bedtime Stories for Kids** (Live on Google Play • `com.dpm.tucktales`)
+8. **MimiRecall – Japanese JLPT Kanji & Vocab LMS** (Live on Google Play • `com.mimirecall.jlpt`)
+9. **QR Maker – Simple & Fast Barcode Studio** (Live on Google Play • `com.rk.QRmaker`)
+10. **All Video Saver & VidPlayer** (Apple App Store Approved / Ready for Distribution • `com.tryeno.videoplayer`)
+
+### 💼 Commercial Client Systems (Del-Qui Japan & Tryeno India):
+11. **Online Drinking App – Video Room Chat** (Del-Qui Japan • Agora RTC SDK real-time rooms)
+12. **Food Delivery – Japanese Consumer App** (Del-Qui Japan • Google Maps & Socket.io)
+13. **Food Delivery – Courier & Driver Partner App** (Del-Qui Japan • Background Geolocation & Route Navigation)
+14. **Techify Care – Ticket Management App** (Tryeno India Enterprise Partner • SLA Tracking & Chat)
 
 ---
 

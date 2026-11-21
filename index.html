@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -7,7 +7,7 @@
   
   <meta name="description" content="Senior Flutter Developer with 6.5+ years of experience building, deploying, and maintaining high-performance Android & iOS applications. Specialized in Flutter, React Native, Riverpod, Agora RTC, Socket.io, and Clean Architecture.">
   <meta name="author" content="Dina Nath Maurya">
-  <meta name="keywords" content="Dina Nath Maurya, Flutter Developer, Mobile App Engineer, React Native, iOS Developer, Android Developer, Riverpod, Agora SDK, Freelance Mobile Developer, Varanasi, India">
+  <meta name="keywords" content="Dina Nath Maurya, Flutter Developer, Senior Mobile App Engineer, React Native, iOS Developer, Android Developer, Riverpod, Agora SDK, Japanese Client Developer, Freelance Mobile Developer, Varanasi, India">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
@@ -18,13 +18,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-  <!-- Prevent theme flash script (Default: Light Theme) -->
+  <!-- Prevent theme flash script (Default: Dark Cyber Theme) -->
   <script>
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
+    if (savedTheme === 'light') {
       document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
     }
   </script>
 
@@ -39,10 +39,14 @@
             brand: {
               50: '#f0f9ff',
               100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
               400: '#38bdf8',
               500: '#0ea5e9',
               600: '#0284c7',
               700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
             }
           }
         }
@@ -50,62 +54,75 @@
     }
   </script>
 
-  <!-- Custom CSS -->
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Design System Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#070b14] text-slate-800 dark:text-slate-100 min-h-screen selection:bg-sky-500 selection:text-white relative overflow-x-hidden transition-colors duration-300">
 
-  <!-- Subtle Ambient Glows & Grid -->
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
-  <div class="fixed top-[-10%] left-[20%] w-[500px] h-[500px] bg-sky-200/40 dark:bg-sky-600/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
-  <div class="fixed bottom-[-10%] right-[10%] w-[450px] h-[450px] bg-indigo-200/40 dark:bg-violet-600/10 rounded-full blur-[130px] pointer-events-none z-0"></div>
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
 
-  <!-- STICKY RESPONSIVE NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-40 glass border-b border-slate-200/80 dark:border-slate-800/80">
+  <!-- Interactive Background Canvas Particles -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Ambient Glowing Aura Orbs -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+  <div class="fixed top-[-10%] left-[20%] w-[550px] h-[550px] bg-sky-200/50 dark:bg-sky-600/15 rounded-full blur-[140px] pointer-events-none z-0 animate-pulse-glow"></div>
+  <div class="fixed bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-indigo-200/50 dark:bg-violet-600/15 rounded-full blur-[140px] pointer-events-none z-0 animate-pulse-glow" style="animation-delay: 2s;"></div>
+  <div class="fixed top-[45%] left-[-10%] w-[400px] h-[400px] bg-cyan-200/40 dark:bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+  <!-- ==========================================================================
+       STICKY RESPONSIVE NAVBAR
+       ========================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
       
       <!-- Brand / Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl p-[2px] bg-gradient-to-tr from-sky-500 via-cyan-400 to-indigo-500 shadow-sm shrink-0">
-          <img src="assets/images/dina-profile.png" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-[10px]">
-          <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#070b14]"></span>
+        <div class="relative w-11 h-11 rounded-2xl p-[2px] bg-gradient-to-tr from-sky-500 via-cyan-400 to-indigo-500 shadow-md shrink-0 transition-transform group-hover:scale-105 duration-300">
+          <img src="assets/images/dina-profile.png" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-[14px]">
+          <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#070b14] animate-pulse"></span>
         </div>
         <div>
           <span class="font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-cyan-400 transition-colors font-heading block leading-tight">
             Dina Nath Maurya
           </span>
           <span class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-mono flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-sky-500 inline-block"></span>
-            Senior Flutter Engineer
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-500 inline-block animate-ping"></span>
+            Senior Flutter & Mobile Lead
           </span>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300">
-        <a href="#about" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">About</a>
-        <a href="#experience" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Experience</a>
-        <a href="#projects" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Projects</a>
-        <a href="#skills" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Skills</a>
-        <a href="#contact" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Contact</a>
+        <a href="#about" class="nav-link hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">About</a>
+        <a href="#experience" class="nav-link hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Experience</a>
+        <a href="#projects" class="nav-link hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Projects (14)</a>
+        <a href="#skills" class="nav-link hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#services" class="nav-link hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Services</a>
+        <a href="#contact" class="nav-link hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Contact</a>
       </nav>
 
       <!-- Desktop Action Buttons & Theme Switcher -->
       <div class="flex items-center gap-2 sm:gap-3">
         
         <!-- Light / Dark Theme Toggle Button -->
-        <button onclick="toggleTheme()" id="theme-toggle-btn" title="Toggle Light / Dark Mode" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 flex items-center justify-center transition-all text-base">
-          <span id="theme-toggle-icon">🌙</span>
+        <button onclick="toggleTheme()" id="theme-toggle-btn" title="Toggle Light / Dark Mode" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 flex items-center justify-center transition-all text-base shadow-xs hover:scale-105">
+          <span id="theme-toggle-icon">☀️</span>
         </button>
 
-        <button onclick="copyEmail()" class="hidden lg:flex text-xs font-mono px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-sky-400 text-slate-700 dark:text-slate-300 items-center gap-1.5 transition-all shadow-sm">
+        <button onclick="copyEmail()" class="hidden lg:flex text-xs font-mono px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-sky-400 text-slate-700 dark:text-slate-300 items-center gap-1.5 transition-all shadow-xs hover:scale-103">
           <svg class="w-3.5 h-3.5 text-sky-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
           <span>Copy Email</span>
         </button>
 
-        <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" class="text-xs font-semibold px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white shadow-md shadow-sky-600/20 flex items-center gap-1.5 transition-all hover:scale-105 shrink-0">
+        <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" onclick="handleResumeDownload()" class="text-xs font-semibold px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-500 hover:to-cyan-500 text-white shadow-md shadow-sky-600/25 flex items-center gap-1.5 transition-all hover:scale-105 shrink-0">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          <span>Resume</span>
+          <span>Download CV</span>
         </a>
 
         <!-- Mobile Menu Toggle -->
@@ -120,80 +137,109 @@
     <!-- Mobile Drawer Menu -->
     <div id="mobile-menu" class="hidden md:hidden glass border-b border-slate-200 dark:border-slate-800 p-5 space-y-4 bg-white/95 dark:bg-[#070b14]/95 shadow-xl">
       <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
-        <span class="text-xs font-mono uppercase text-slate-500">Navigation</span>
+        <span class="text-xs font-mono uppercase text-slate-500">Navigation Menu</span>
         <button id="mobile-menu-close" class="text-slate-500 hover:text-slate-900 dark:hover:text-white p-1">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
       <div class="flex flex-col space-y-2.5 font-medium text-slate-700 dark:text-slate-300">
-        <a href="#about" class="mobile-nav-link hover:text-sky-600 py-1">About Dina</a>
-        <a href="#experience" class="mobile-nav-link hover:text-sky-600 py-1">Experience & Companies</a>
-        <a href="#projects" class="mobile-nav-link hover:text-sky-600 py-1">Featured Projects (9+)</a>
-        <a href="#skills" class="mobile-nav-link hover:text-sky-600 py-1">Technical Skills</a>
-        <a href="#contact" class="mobile-nav-link hover:text-sky-600 py-1">Contact Details</a>
+        <a href="#about" class="mobile-nav-link hover:text-sky-600 py-1 flex items-center justify-between">
+          <span>About Dina</span>
+          <span class="text-xs font-mono text-slate-400">01</span>
+        </a>
+        <a href="#experience" class="mobile-nav-link hover:text-sky-600 py-1 flex items-center justify-between">
+          <span>Experience (Tryeno & Del-Qui Japan)</span>
+          <span class="text-xs font-mono text-slate-400">02</span>
+        </a>
+        <a href="#projects" class="mobile-nav-link hover:text-sky-600 py-1 flex items-center justify-between">
+          <span>Featured Projects (14 Applications)</span>
+          <span class="text-xs font-mono text-sky-500 font-bold">14</span>
+        </a>
+        <a href="#skills" class="mobile-nav-link hover:text-sky-600 py-1 flex items-center justify-between">
+          <span>Technical Arsenal</span>
+          <span class="text-xs font-mono text-slate-400">04</span>
+        </a>
+        <a href="#services" class="mobile-nav-link hover:text-sky-600 py-1 flex items-center justify-between">
+          <span>Engineering Services</span>
+          <span class="text-xs font-mono text-slate-400">05</span>
+        </a>
+        <a href="#contact" class="mobile-nav-link hover:text-sky-600 py-1 flex items-center justify-between">
+          <span>Contact Details</span>
+          <span class="text-xs font-mono text-slate-400">06</span>
+        </a>
       </div>
       <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
         <div class="grid grid-cols-2 gap-2">
-          <a href="tel:+919793953764" class="text-center text-xs font-semibold py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5">
-            <span>📞 Call</span>
+          <a href="tel:+919793953764" class="text-center text-xs font-semibold py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 flex items-center justify-center gap-1.5">
+            <span>📞 Call Now</span>
           </a>
-          <a href="https://wa.me/919793953764" target="_blank" rel="noopener noreferrer" class="text-center text-xs font-semibold py-2 rounded-xl bg-emerald-600 text-white flex items-center justify-center gap-1.5">
+          <a href="https://wa.me/919793953764" target="_blank" rel="noopener noreferrer" class="text-center text-xs font-semibold py-2.5 rounded-xl bg-emerald-600 text-white flex items-center justify-center gap-1.5 shadow-sm">
             <span>💬 WhatsApp</span>
           </a>
         </div>
-        <button onclick="toggleTheme()" class="w-full flex items-center justify-center gap-2 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200">
-          <span id="mobile-theme-toggle-icon">🌙</span>
+        <button onclick="toggleTheme()" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200">
+          <span id="mobile-theme-toggle-icon">☀️</span>
           <span id="theme-label">Switch Theme</span>
         </button>
-        <button onclick="copyPhone()" class="w-full text-center text-xs font-mono py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+        <button onclick="copyPhone()" class="w-full text-center text-xs font-mono py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
           Copy Phone: +91 97939 53764
         </button>
       </div>
     </div>
   </header>
 
-  <!-- MAIN WRAPPER -->
+  <!-- ==========================================================================
+       MAIN CONTENT
+       ========================================================================== -->
   <main class="relative z-10 pt-24 sm:pt-28">
 
-    <!-- HERO SECTION (Light & Mobile Friendly) -->
+    <!-- HERO SECTION -->
     <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-20">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Hero Details Column -->
-        <div class="lg:col-span-7 space-y-5 text-left order-2 lg:order-1">
+        <div class="lg:col-span-7 space-y-6 text-left order-2 lg:order-1 reveal-left">
           
-          <!-- Availability Badge -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-semibold font-mono shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span>Available for Senior Mobile Roles & High-Impact Contracts</span>
+          <!-- Availability & Location Badges -->
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-300 dark:border-emerald-500/40 text-emerald-700 dark:text-emerald-400 text-xs font-semibold font-mono shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              <span>Available for Senior Mobile Roles & High-Impact Contracts</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-mono">
+              <span>📍 Varanasi, India</span>
+              <span class="text-slate-400">•</span>
+              <span class="text-sky-600 dark:text-cyan-400">GMT+5:30</span>
+            </div>
           </div>
 
-          <!-- Bold Main Headline -->
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading leading-[1.15]">
+          <!-- Bold Main Headline with Dynamic Typewriter Effect -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading leading-[1.12]">
             Engineering Scalable <br>
-            <span class="text-gradient-flutter">Mobile Apps</span> for <br>
-            High-Impact Businesses.
+            <span id="hero-typewriter" class="text-shimmer font-black">Senior Flutter Engineer</span><br>
+            for High-Impact Products.
           </h1>
 
           <!-- Summary Intro -->
           <p class="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-            Hi, I'm <strong class="text-slate-900 dark:text-white font-semibold">Dina Nath Maurya</strong>. A Senior Mobile Engineer with <span class="text-sky-600 dark:text-cyan-400 font-bold">6.5+ years of experience</span> architecting, building, and deploying 15+ production applications on <span class="text-slate-900 dark:text-white font-medium">Apple App Store</span> and <span class="text-slate-900 dark:text-white font-medium">Google Play</span>. Specialized in Flutter, React Native, Riverpod, Agora RTC video rooms, live GPS tracking, and Japanese enterprise Agile delivery.
+            Hi, I'm <strong class="text-slate-900 dark:text-white font-semibold">Dina Nath Maurya</strong>. A Senior Mobile Engineer with <span class="text-sky-600 dark:text-cyan-400 font-bold">6.5+ years of experience</span> architecting, building, and deploying <span class="text-slate-900 dark:text-white font-semibold">10 live production apps</span> on <span class="text-sky-600 dark:text-cyan-400 font-medium">Apple App Store</span> and <span class="text-sky-600 dark:text-cyan-400 font-medium">Google Play</span>. Specialized in Flutter, React Native, Riverpod, Agora RTC video rooms, live GPS tracking, and Japanese enterprise Agile delivery.
           </p>
 
           <!-- CTAs -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="#projects" class="px-5 sm:px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-sky-600/20 flex items-center gap-2 transition-all hover:scale-102">
-              <span>Explore Projects</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <a href="#projects" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-500 hover:to-cyan-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-sky-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-98">
+              <span>Explore 14 Verified Apps</span>
+              <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
 
-            <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" class="px-5 sm:px-6 py-3 rounded-xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 hover:border-slate-400 flex items-center gap-2 transition-all hover:scale-102 shadow-xs">
+            <a href="assets/docs/Dina_Nath_Maurya_Resume.pdf" download="Dina_Nath_Maurya_Resume.pdf" onclick="handleResumeDownload()" class="px-6 py-3.5 rounded-2xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm border border-slate-200 dark:border-slate-700 hover:border-sky-500 flex items-center gap-2 transition-all hover:scale-105 shadow-sm active:scale-98">
               <svg class="w-4 h-4 text-sky-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
               <span>Download CV</span>
             </a>
 
-            <a href="#contact" class="px-4 py-3 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-white transition-colors">
-              Contact Dina →
+            <a href="#contact" class="px-4 py-3.5 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-white transition-colors flex items-center gap-1 group">
+              <span>Get in Touch</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </div>
 
@@ -209,7 +255,7 @@
             <span>•</span>
             <a href="https://github.com/dnm-tryeno" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1.5">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-              <span>GitHub</span>
+              <span>GitHub (47 Repos)</span>
             </a>
             <span>•</span>
             <a href="https://www.linkedin.com/in/dina-nath-maurya-0a738282/" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1.5">
@@ -220,143 +266,218 @@
 
         </div>
 
-        <!-- Profile Avatar & Badges (Mobile Optimized) -->
-        <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
-          <div class="relative w-64 sm:w-72 md:w-80 lg:w-88 aspect-square">
+        <!-- Profile Avatar & Badges Showcase -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center order-1 lg:order-2 reveal-scale">
+          <div class="relative w-72 sm:w-80 md:w-88 aspect-square mb-6">
             
-            <!-- Soft Ambient Shadow -->
-            <div class="absolute inset-0 rounded-3xl bg-sky-200/50 dark:bg-sky-600/20 blur-xl -z-10 animate-pulse-glow"></div>
+            <!-- Conic Rotating Glow Ring -->
+            <div class="glow-ring-conic rounded-3xl"></div>
 
             <!-- Profile Image Container -->
-            <div class="w-full h-full rounded-3xl p-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden group">
-              <img src="assets/images/dina-profile.png" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-2xl group-hover:scale-102 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+            <div class="w-full h-full rounded-3xl p-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden group">
+              <img src="assets/images/dina-profile.png" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-2xl group-hover:scale-103 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
 
               <!-- Overlay Tag -->
-              <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/40 dark:border-slate-800 flex items-center justify-between shadow-xs">
+              <div class="absolute bottom-3 left-3 right-3 p-3 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/40 dark:border-slate-800 flex items-center justify-between shadow-lg">
                 <div>
-                  <p class="text-xs font-bold text-slate-900 dark:text-white font-heading">Dina Nath Maurya</p>
-                  <p class="text-[10px] text-sky-600 dark:text-cyan-400 font-mono">6.5+ Yrs Mobile Engineering</p>
+                  <p class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white font-heading">Dina Nath Maurya</p>
+                  <p class="text-[10px] text-sky-600 dark:text-cyan-400 font-mono">Senior Lead • Tryeno & Del-Qui Japan</p>
                 </div>
-                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-cyan-300 border border-sky-300 dark:border-cyan-800">
                   LEAD
                 </span>
               </div>
             </div>
 
             <!-- Floating Badge 1 (Flutter) -->
-            <div class="absolute -top-3 -left-3 sm:-left-4 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md flex items-center gap-2 animate-float-slow">
-              <span class="text-sm">⚡</span>
+            <div class="absolute -top-3 -left-3 sm:-left-4 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-2.5 animate-float-slow backdrop-blur-md">
+              <span class="text-base">⚡</span>
               <div class="text-left">
                 <p class="text-[9px] text-slate-400 font-mono leading-none">Core</p>
-                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Flutter & Dart</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Flutter 3.x & Dart</p>
               </div>
             </div>
 
             <!-- Floating Badge 2 (Shipped Apps) -->
-            <div class="absolute -bottom-3 -left-2 sm:-left-3 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md flex items-center gap-2 animate-float-delayed">
-              <span class="text-sm">🚀</span>
+            <div class="absolute -bottom-3 -left-2 sm:-left-3 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-2.5 animate-float-delayed backdrop-blur-md">
+              <span class="text-base">🚀</span>
               <div class="text-left">
                 <p class="text-[9px] text-slate-400 font-mono leading-none">Stores</p>
-                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">15+ Live Apps</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">10 Live Store Apps</p>
               </div>
             </div>
 
-            <!-- Floating Badge 3 (Architecture) -->
-            <div class="absolute top-1/2 -right-3 sm:-right-4 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md flex items-center gap-2 animate-float-slow">
-              <span class="text-sm">⚙️</span>
+            <!-- Floating Badge 3 (Agora RTC) -->
+            <div class="absolute top-1/2 -right-3 sm:-right-5 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-2.5 animate-float-slow backdrop-blur-md">
+              <span class="text-base">🎥</span>
               <div class="text-left">
-                <p class="text-[9px] text-slate-400 font-mono leading-none">Architecture</p>
-                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Riverpod & Clean</p>
+                <p class="text-[9px] text-slate-400 font-mono leading-none">Real-Time</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Agora RTC & Sockets</p>
               </div>
             </div>
 
           </div>
+
+          <!-- Interactive Code Terminal Snippet Card -->
+          <div class="w-full terminal-window text-left text-xs">
+            <div class="terminal-header">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+              </div>
+              <div class="flex items-center gap-1 text-[11px]">
+                <button class="terminal-tab active" data-tab="dina_profile.dart">dina_profile.dart</button>
+                <button class="terminal-tab" data-tab="architecture.dart">architecture.dart</button>
+                <button class="terminal-tab" data-tab="store_release.sh">store_release.sh</button>
+              </div>
+              <button onclick="copyTerminalCode()" title="Copy snippet" class="text-slate-400 hover:text-white text-xs px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 transition-colors">
+                Copy
+              </button>
+            </div>
+            <pre class="p-4 overflow-x-auto text-slate-300 leading-relaxed font-mono text-[11px]"><code id="terminal-code-display"><span class="syn-kw">class</span> <span class="syn-type">DinaNathMaurya</span> <span class="syn-kw">extends</span> <span class="syn-type">SeniorMobileEngineer</span> {
+  <span class="syn-kw">final</span> <span class="syn-type">double</span> experience = <span class="syn-num">6.5</span>; <span class="syn-comment">// Years Production</span>
+  <span class="syn-kw">final</span> <span class="syn-type">String</span> location = <span class="syn-str">'Varanasi, India (UTC+5:30)'</span>;
+  <span class="syn-kw">final</span> <span class="syn-type">List</span>&lt;<span class="syn-type">String</span>&gt; coreStack = [
+    <span class="syn-str">'Flutter 3.x'</span>, <span class="syn-str">'Dart'</span>, <span class="syn-str">'Riverpod 2.x'</span>,
+    <span class="syn-str">'Agora RTC SDK'</span>, <span class="syn-str">'Socket.io'</span>, <span class="syn-str">'React Native'</span>
+  ];
+  <span class="syn-kw">final</span> <span class="syn-type">int</span> liveStoreApps = <span class="syn-num">10</span>; <span class="syn-comment">// Apple App Store & Google Play</span>
+  
+  <span class="syn-kw">void</span> <span class="syn-fn">buildScalableExperience</span>() {
+    <span class="syn-fn">deliverHighFpsFluidUI</span>(fps: <span class="syn-num">120</span>);
+    <span class="syn-fn">enforceCleanArchitecture</span>(tested: <span class="syn-kw">true</span>);
+  }
+}</code></pre>
+          </div>
+
         </div>
 
       </div>
 
-      <!-- KEY STATS MATRIX (Mobile 2x2, Desktop 4x1) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-slate-200 dark:border-slate-800">
+      <!-- KEY STATS MATRIX WITH ANIMATED NUMBERS (Mobile 2x2, Desktop 4x1) -->
+      <div id="stats-matrix" class="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-5 mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-slate-200 dark:border-slate-800 reveal">
         
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center shadow-xs">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-sky-600 dark:text-cyan-400 font-heading">6.5+</p>
-          <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Years Production Exp.</p>
+        <div class="spotlight-card glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-sky-600 dark:text-cyan-400 font-heading stat-counter" data-target="6.5" data-suffix="+">0</p>
+          <p class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-1">Years Production Exp.</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Mobile App Architecture</p>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center shadow-xs">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-sky-600 dark:text-cyan-400 font-heading">25+</p>
-          <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Shipped Apps (47 Repos)</p>
+        <div class="spotlight-card glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-sky-600 dark:text-cyan-400 font-heading stat-counter" data-target="14" data-suffix="">0</p>
+          <p class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-1">Production Projects</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">10 Store + 4 Client Work</p>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center shadow-xs">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-indigo-600 dark:text-violet-400 font-heading">10+</p>
-          <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Global Client Solutions</p>
+        <div class="spotlight-card glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-600 dark:text-violet-400 font-heading stat-counter" data-target="10" data-suffix="">0</p>
+          <p class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-1">Live Store Apps</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Apple App Store & Google Play</p>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center shadow-xs">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 font-heading">100K+</p>
-          <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">Active Users Impacted</p>
+        <div class="spotlight-card glass-card p-5 sm:p-6 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 text-center shadow-xs">
+          <p class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-emerald-600 dark:text-emerald-400 font-heading stat-counter" data-target="100" data-suffix="K+">0</p>
+          <p class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-1">Active Users Impacted</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">Global & Japan Audience</p>
         </div>
 
       </div>
 
     </section>
 
+    <!-- CONTINUOUS TECH STACK INFINITE MARQUEE -->
+    <section class="py-6 border-y border-slate-200/80 dark:border-slate-800/80 bg-slate-100/40 dark:bg-slate-950/40 overflow-hidden">
+      <div class="marquee-track flex items-center gap-6 sm:gap-10 text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-400">
+        <!-- Loop 1 -->
+        <span class="flex items-center gap-2 font-bold text-sky-600 dark:text-cyan-400"><span>⚡</span> Flutter 3.x</span>
+        <span class="flex items-center gap-2"><span>🎯</span> Dart</span>
+        <span class="flex items-center gap-2"><span>⚛️</span> React Native</span>
+        <span class="flex items-center gap-2 font-bold text-indigo-500"><span>🏛️</span> Riverpod 2.x</span>
+        <span class="flex items-center gap-2 font-bold text-emerald-500"><span>🎥</span> Agora RTC SDK</span>
+        <span class="flex items-center gap-2"><span>🔌</span> Socket.io</span>
+        <span class="flex items-center gap-2"><span>🗺️</span> Google Maps Geolocation</span>
+        <span class="flex items-center gap-2 font-bold text-amber-500"><span>🔥</span> Firebase & FCM</span>
+        <span class="flex items-center gap-2"><span>🍏</span> Apple App Store Connect</span>
+        <span class="flex items-center gap-2"><span>🤖</span> Google Play Console</span>
+        <span class="flex items-center gap-2"><span>🛠️</span> Bitrise CI/CD</span>
+        <span class="flex items-center gap-2"><span>🐬</span> MySQL & REST APIs</span>
+        <span class="flex items-center gap-2"><span>💳</span> Stripe & Payments</span>
+        <span class="flex items-center gap-2"><span>📦</span> Clean Architecture</span>
+        <!-- Loop 2 (Duplicate for seamless infinite scroll) -->
+        <span class="flex items-center gap-2 font-bold text-sky-600 dark:text-cyan-400"><span>⚡</span> Flutter 3.x</span>
+        <span class="flex items-center gap-2"><span>🎯</span> Dart</span>
+        <span class="flex items-center gap-2"><span>⚛️</span> React Native</span>
+        <span class="flex items-center gap-2 font-bold text-indigo-500"><span>🏛️</span> Riverpod 2.x</span>
+        <span class="flex items-center gap-2 font-bold text-emerald-500"><span>🎥</span> Agora RTC SDK</span>
+        <span class="flex items-center gap-2"><span>🔌</span> Socket.io</span>
+        <span class="flex items-center gap-2"><span>🗺️</span> Google Maps Geolocation</span>
+        <span class="flex items-center gap-2 font-bold text-amber-500"><span>🔥</span> Firebase & FCM</span>
+        <span class="flex items-center gap-2"><span>🍏</span> Apple App Store Connect</span>
+        <span class="flex items-center gap-2"><span>🤖</span> Google Play Console</span>
+        <span class="flex items-center gap-2"><span>🛠️</span> Bitrise CI/CD</span>
+        <span class="flex items-center gap-2"><span>🐬</span> MySQL & REST APIs</span>
+        <span class="flex items-center gap-2"><span>💳</span> Stripe & Payments</span>
+        <span class="flex items-center gap-2"><span>📦</span> Clean Architecture</span>
+      </div>
+    </section>
+
     <!-- ABOUT SECTION -->
     <section id="about" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
-          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Professional Background</p>
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-2 reveal">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Engineering Philosophy</p>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">About Dina Nath Maurya</h2>
-          <div class="w-14 h-1 bg-sky-500 mx-auto rounded-full"></div>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-1">Senior Mobile App Developer with 6.5+ years of production experience crafting fluid, crash-free applications.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-3 bg-white dark:bg-slate-900">
-            <div class="w-11 h-11 rounded-xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">
+          <div class="glass-card spotlight-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 space-y-4 bg-white dark:bg-slate-900 reveal delay-100">
+            <div class="w-12 h-12 rounded-2xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold text-2xl shadow-sm">
               📱
             </div>
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">Clean Architecture & Performance</h3>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">Clean Architecture & 120 FPS Fluidity</h3>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Committed to building scalable, testable, and maintainable mobile architectures. I utilize Clean Architecture with Riverpod & Provider, ensuring 60fps/120fps UI fluidity and minimal battery footprint.
             </p>
-            <ul class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-1.5 pt-2">
-              <li class="flex items-center gap-1.5">✓ Clean Architecture & Repository Pattern</li>
-              <li class="flex items-center gap-1.5">✓ Riverpod 2.x State Management</li>
-              <li class="flex items-center gap-1.5">✓ Native iOS & Android Platform Bridges</li>
+            <ul class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Clean Architecture & Repository Pattern</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Riverpod 2.x State Management</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Native iOS & Android Platform Bridges</li>
             </ul>
           </div>
 
-          <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-3 bg-white dark:bg-slate-900">
-            <div class="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-violet-500/10 text-indigo-600 dark:text-violet-400 flex items-center justify-center font-bold text-xl">
+          <div class="glass-card spotlight-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 space-y-4 bg-white dark:bg-slate-900 reveal delay-200">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-violet-500/10 text-indigo-600 dark:text-violet-400 flex items-center justify-center font-bold text-2xl shadow-sm">
               🌏
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">Japanese & Global Client Experience</h3>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Extensive hands-on experience working directly with Japanese client teams (Del-Qui Japan). Comfortable with fast-paced Agile sprint delivery, strict quality standards, and multi-language localization.
             </p>
-            <ul class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-1.5 pt-2">
-              <li class="flex items-center gap-1.5">✓ Agile / Scrum 2-week Sprint Cadence</li>
-              <li class="flex items-center gap-1.5">✓ Async international communication</li>
-              <li class="flex items-center gap-1.5">✓ Japanese (JP) & English i18n support</li>
+            <ul class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Agile / Scrum 2-week Sprint Cadence</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Async international team collaboration</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Japanese (JP) & English i18n support</li>
             </ul>
           </div>
 
-          <div class="glass-card rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-3 bg-white dark:bg-slate-900">
-            <div class="w-11 h-11 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl">
+          <div class="glass-card spotlight-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 space-y-4 bg-white dark:bg-slate-900 reveal delay-300">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-2xl shadow-sm">
               🚀
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">Full Store Release Ownership</h3>
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Complete end-to-end lifecycle ownership: Apple App Store certificates, provisioning profiles, privacy declarations, TestFlight feedback loops, Google Play Console compliance, and Bitrise CI/CD.
             </p>
-            <ul class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-1.5 pt-2">
-              <li class="flex items-center gap-1.5">✓ App Store Connect & TestFlight</li>
-              <li class="flex items-center gap-1.5">✓ Google Play Console & AAB builds</li>
-              <li class="flex items-center gap-1.5">✓ Bitrise & GitHub Actions CI/CD</li>
+            <ul class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> App Store Connect & TestFlight</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Google Play Console & AAB builds</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-500">✓</span> Bitrise & GitHub Actions CI/CD</li>
             </ul>
           </div>
 
@@ -369,95 +490,116 @@
     <section id="experience" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-950/40">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-2 reveal">
           <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Career History</p>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">Professional Work Experience</h2>
-          <div class="w-14 h-1 bg-sky-500 mx-auto rounded-full"></div>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-1">6.5+ years of delivering high-stakes commercial applications for global companies.</p>
         </div>
 
         <div class="relative border-l-2 border-slate-300 dark:border-slate-800 ml-3 sm:ml-6 md:ml-8 space-y-10">
           
           <!-- Experience Item 1: Tryeno India -->
-          <div class="relative pl-6 sm:pl-8 group">
-            <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-white dark:bg-[#070b14] border-4 border-sky-600 flex items-center justify-center"></div>
+          <div class="relative pl-6 sm:pl-9 group reveal">
+            <div class="absolute -left-[11px] top-1.5 w-6 h-6 rounded-full bg-white dark:bg-[#070b14] border-4 border-sky-600 flex items-center justify-center shadow-md">
+              <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+            </div>
 
-            <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+            <div class="glass-card spotlight-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading">
-                  Tryeno India
-                </h3>
-                <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-sky-50 dark:bg-cyan-950 text-sky-700 dark:text-cyan-300 border border-sky-200 dark:border-cyan-800">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-600 dark:text-cyan-400 font-bold flex items-center justify-center font-mono">
+                    TI
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading">
+                      Tryeno India
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Senior Lead Developer • Full Time</p>
+                  </div>
+                </div>
+                <span class="text-[11px] font-mono px-3.5 py-1.5 rounded-full bg-sky-50 dark:bg-cyan-950/80 text-sky-700 dark:text-cyan-300 border border-sky-200 dark:border-cyan-800 font-semibold shadow-xs">
                   June 2021 – Present
                 </span>
               </div>
-              <p class="text-xs sm:text-sm font-semibold text-sky-600 dark:text-cyan-400 mb-3">Senior Flutter Developer & React Native Engineer</p>
+              <p class="text-xs sm:text-sm font-semibold text-sky-600 dark:text-cyan-400 mb-4">Senior Flutter Developer & React Native Engineer</p>
 
-              <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-600 dark:text-cyan-400 font-bold">›</span>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-sky-600 dark:text-cyan-400 font-bold text-base">›</span>
                   <span>Architected and maintained multiple commercial Android & iOS applications using Flutter and Dart under Clean Architecture.</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-600 dark:text-cyan-400 font-bold">›</span>
-                  <span>Integrated complex SDKs: Agora RTC (video/audio rooms), Google Maps Geolocation, Socket.io, Stripe Payments, and Firebase.</span>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-sky-600 dark:text-cyan-400 font-bold text-base">›</span>
+                  <span>Integrated complex SDKs: Agora RTC (multi-user video & audio rooms), Google Maps Geolocation, Socket.io, Stripe Payments, and Firebase.</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-600 dark:text-cyan-400 font-bold">›</span>
-                  <span>Collaborated on REST API design, MySQL database modeling, Eloquent ORM, authentication middleware, and validation.</span>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-sky-600 dark:text-cyan-400 font-bold text-base">›</span>
+                  <span>Collaborated on REST API design, MySQL database modeling, Eloquent ORM, authentication middleware, and input validation.</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-sky-600 dark:text-cyan-400 font-bold">›</span>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-sky-600 dark:text-cyan-400 font-bold text-base">›</span>
                   <span>Managed end-to-end releases on Apple App Store Connect and Google Play Console with automated CI/CD pipelines.</span>
                 </li>
               </ul>
 
-              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800">
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Flutter</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">React Native</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Riverpod</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Firebase</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Socket.io</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">MySQL & REST</span>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Flutter 3.x</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">React Native</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Riverpod</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Firebase</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Socket.io</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">MySQL & REST</span>
               </div>
             </div>
           </div>
 
           <!-- Experience Item 2: Del-Qui Japan -->
-          <div class="relative pl-6 sm:pl-8 group">
-            <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-white dark:bg-[#070b14] border-4 border-indigo-600 flex items-center justify-center"></div>
+          <div class="relative pl-6 sm:pl-9 group reveal">
+            <div class="absolute -left-[11px] top-1.5 w-6 h-6 rounded-full bg-white dark:bg-[#070b14] border-4 border-indigo-600 flex items-center justify-center shadow-md">
+              <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+            </div>
 
-            <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+            <div class="glass-card spotlight-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading">
-                  Del-Qui Japan
-                </h3>
-                <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-indigo-50 dark:bg-violet-950 text-indigo-700 dark:text-violet-300 border border-indigo-200 dark:border-violet-800">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-violet-400 font-bold flex items-center justify-center font-mono">
+                    DQ
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading">
+                      Del-Qui Japan
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Japanese Enterprise Client Systems</p>
+                  </div>
+                </div>
+                <span class="text-[11px] font-mono px-3.5 py-1.5 rounded-full bg-indigo-50 dark:bg-violet-950/80 text-indigo-700 dark:text-violet-300 border border-indigo-200 dark:border-violet-800 font-semibold shadow-xs">
                   November 2023 – March 2026
                 </span>
               </div>
-              <p class="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-violet-400 mb-3">Flutter Developer (Japanese Client Projects)</p>
+              <p class="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-violet-400 mb-4">Flutter Developer (Japanese Client Projects)</p>
 
-              <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                <li class="flex items-start gap-2">
-                  <span class="text-indigo-600 dark:text-violet-400 font-bold">›</span>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-indigo-600 dark:text-violet-400 font-bold text-base">›</span>
                   <span>Engineered virtual drinking room experiences with Agora Video RTC SDK, featuring dynamic seating, muting, and gifts.</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-indigo-600 dark:text-violet-400 font-bold">›</span>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-indigo-600 dark:text-violet-400 font-bold text-base">›</span>
                   <span>Developed turn-by-turn live courier tracking with Google Maps and Socket.io for food delivery user and driver applications.</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-indigo-600 dark:text-violet-400 font-bold">›</span>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-indigo-600 dark:text-violet-400 font-bold text-base">›</span>
                   <span>Managed iOS deployment certificates, provisioning profiles, TestFlight beta testing, and Apple App Store submissions.</span>
                 </li>
               </ul>
 
-              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800">
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Flutter</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Agora RTC</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Google Maps</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Stripe</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">TestFlight</span>
+              <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Flutter</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Agora RTC</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Google Maps</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Stripe</span>
+                <span class="text-[11px] px-3 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">TestFlight</span>
               </div>
             </div>
           </div>
@@ -467,36 +609,53 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS SECTION (Mobile Filter Carousel) -->
+    <!-- FEATURED PROJECTS SECTION -->
     <section id="projects" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2">
-          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Shipped Applications</p>
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2 reveal">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Shipped Applications Catalog</p>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">Featured Projects Showcase</h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Real production applications on Apple App Store & Google Play, plus commercial client software.</p>
-          <div class="w-14 h-1 bg-sky-500 mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">14 verified production applications (10 live on Apple App Store & Google Play Store, plus 4 proprietary client systems for Del-Qui Japan & Tryeno).</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Real-Time Search Bar -->
+        <div class="max-w-xl mx-auto mb-6 reveal">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </span>
+            <input 
+              type="text" 
+              id="project-search-input" 
+              placeholder="Search by project name, package name, tech stack (Riverpod, Agora, Store, Video)..." 
+              class="w-full pl-11 pr-24 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 text-xs sm:text-sm focus:border-sky-500 focus:outline-none transition-all shadow-sm"
+            >
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+              <span id="project-count-badge" class="text-[11px] font-mono font-semibold px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                14 of 14
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Filter Chips (Mobile horizontal swipe, Desktop centered) -->
-        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar py-2 mb-8 px-1">
-          <button data-filter="all" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-sky-600 text-white border border-sky-500 shadow-sm shrink-0 transition-all">
-            All Projects (15+)
+        <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar py-2 mb-8 px-1 reveal">
+          <button data-filter="all" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-sky-600 text-white border border-sky-500 shadow-sm shrink-0 transition-all">
+            All Applications (14)
           </button>
-          <button data-filter="client" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
-            💼 Client Projects (Japan & Global)
+          <button data-filter="store" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
+            📱 Live Stores (10 Apps)
           </button>
-          <button data-filter="own" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
-            🚀 My Products & Apps
+          <button data-filter="client" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
+            💼 Del-Qui Japan & Clients (4)
           </button>
-          <button data-filter="store" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
-            📱 Live on Stores (9 Apps)
+          <button data-filter="github" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
+            💻 Verified Repos (8)
           </button>
-          <button data-filter="tools" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
-            🛠 Utilities & AI
-          </button>
-          <button data-filter="flutter" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
-            ⚡ Flutter & Dart
+          <button data-filter="flutter" class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:text-sky-600 shrink-0 transition-all shadow-xs">
+            ⚡ Flutter & Real-Time
           </button>
         </div>
 
@@ -508,105 +667,164 @@
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS MATRIX -->
-    <section id="skills" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-950/40">
+    <!-- SERVICES & WHAT I BRING SECTION -->
+    <section id="services" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800 bg-slate-100/50 dark:bg-slate-950/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
-          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Technical Arsenal</p>
-          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">Skills & Architecture</h2>
-          <div class="w-14 h-1 bg-sky-500 mx-auto rounded-full"></div>
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-2 reveal">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Engineering Capabilities</p>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">What I Deliver To Your Team</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-1">End-to-end craftsmanship from clean architectural design to production store deployment.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold">📱</span>
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 space-y-3.5 bg-white dark:bg-slate-900 reveal delay-100">
+            <div class="w-12 h-12 rounded-2xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold text-2xl shadow-sm">
+              🏗️
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">0-to-1 Architecture</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Greenfield project setup with Clean Architecture, modular packages, Riverpod 2.x state management, and strict separation of concerns.
+            </p>
+          </div>
+
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 space-y-3.5 bg-white dark:bg-slate-900 reveal delay-200">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-violet-500/10 text-indigo-600 dark:text-violet-400 flex items-center justify-center font-bold text-2xl shadow-sm">
+              📹
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Agora RTC & Real-Time</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Ultra-low latency audio/video streaming, multi-host rooms, WebSockets, Socket.io, live chat, and turn-by-turn Google Maps tracking.
+            </p>
+          </div>
+
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 space-y-3.5 bg-white dark:bg-slate-900 reveal delay-300">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-2xl shadow-sm">
+              🚀
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Store Release CI/CD</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Complete Apple App Store & Google Play publishing, privacy compliance, TestFlight betas, Bitrise/GitHub Actions pipelines, and zero-rejection audits.
+            </p>
+          </div>
+
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 space-y-3.5 bg-white dark:bg-slate-900 reveal delay-400">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-2xl shadow-sm">
+              ⚡
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">120 FPS Optimization</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Eliminating UI jank, widget rebuild profiling with Flutter DevTools, memory leak debugging, lazy loading, and battery footprint reduction.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-2 reveal">
+          <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Technical Arsenal</p>
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">Skills & Architecture Matrix</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-1">Production-tested tools and frameworks utilized across 20+ shipped apps.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4 reveal delay-100">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">📱</span>
               <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Mobile Platforms</h3>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-sky-700 dark:text-cyan-300">Flutter</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-sky-700 dark:text-cyan-300">Dart</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">React Native</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Android SDK</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">iOS (Swift)</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Adaptive UI</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-sky-700 dark:text-cyan-300 font-semibold">Flutter 3.x</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-sky-700 dark:text-cyan-300 font-semibold">Dart</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">React Native</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Android SDK (Java/Kotlin)</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">iOS (Swift / ObjC)</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Adaptive Screen Layouts</span>
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-violet-500/10 text-indigo-600 dark:text-violet-400 flex items-center justify-center font-bold">🏛️</span>
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4 reveal delay-200">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-2xl bg-indigo-50 dark:bg-violet-500/10 text-indigo-600 dark:text-violet-400 flex items-center justify-center font-bold text-xl">🏛️</span>
               <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">State & Architecture</h3>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-indigo-700 dark:text-violet-300">Riverpod 2.x</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-indigo-700 dark:text-violet-300">Provider</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Clean Architecture</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Repository Pattern</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Freezed</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">AutoRoute</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-indigo-700 dark:text-violet-300 font-semibold">Riverpod 2.x</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-indigo-700 dark:text-violet-300 font-semibold">Provider</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Clean Architecture</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Repository Pattern</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Freezed / JSON</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">AutoRoute</span>
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">⚡</span>
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4 reveal delay-300">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl">⚡</span>
               <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Real-Time & APIs</h3>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-emerald-700 dark:text-emerald-300">Agora RTC SDK</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-emerald-700 dark:text-emerald-300">Socket.io</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">REST APIs</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Dio</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Google Maps</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">WebSockets</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-emerald-700 dark:text-emerald-300 font-semibold">Agora RTC SDK</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-emerald-700 dark:text-emerald-300 font-semibold">Socket.io</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">REST APIs</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Dio & Interceptors</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Google Maps Navigation</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">WebSockets</span>
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">☁️</span>
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4 reveal delay-100">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xl">☁️</span>
               <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Backend & Cloud</h3>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-amber-700 dark:text-amber-300">Firebase Auth</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-amber-700 dark:text-amber-300">Firestore & FCM</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">MySQL</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Laravel Eloquent</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">SQLite & Hive</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Stripe</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-amber-700 dark:text-amber-300 font-semibold">Firebase Auth</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-amber-700 dark:text-amber-300 font-semibold">Firestore & FCM</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">MySQL Database</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Laravel Eloquent</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">SQLite & Hive Cache</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Stripe & Razorpay</span>
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center font-bold">📦</span>
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4 reveal delay-200">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-2xl bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center font-bold text-xl">📦</span>
               <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Store Releases & CI/CD</h3>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-pink-700 dark:text-pink-300">App Store Connect</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-pink-700 dark:text-pink-300">Google Play Console</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">GitHub Actions</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Bitrise CI/CD</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">TestFlight</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Certs & Keystores</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-pink-700 dark:text-pink-300 font-semibold">App Store Connect</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-pink-700 dark:text-pink-300 font-semibold">Google Play Console</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">GitHub Actions</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Bitrise CI/CD</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">TestFlight Beta Cycles</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Certificates & Keystores</span>
             </div>
           </div>
 
-          <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5">
-              <span class="w-9 h-9 rounded-xl bg-cyan-50 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold">🛠️</span>
+          <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-4 reveal delay-300">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-2xl bg-cyan-50 dark:bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">🛠️</span>
               <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Developer Workflows</h3>
             </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-cyan-700 dark:text-cyan-300">Git & GitHub</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-cyan-700 dark:text-cyan-300">Sourcetree</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Postman</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Figma</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Vercel</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Agile / Scrum</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-cyan-700 dark:text-cyan-300 font-semibold">Git & GitHub</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-cyan-700 dark:text-cyan-300 font-semibold">Sourcetree</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Postman / Insomnia</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Figma to Flutter</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Vercel & Web</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">Agile / Scrum 2-Wk Sprints</span>
             </div>
           </div>
 
@@ -619,62 +837,62 @@
     <section id="contact" class="py-14 sm:py-20 border-t border-slate-200 dark:border-slate-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-2 reveal">
           <p class="text-xs font-mono uppercase tracking-widest text-sky-600 dark:text-cyan-400">Get in Touch</p>
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-heading">Let's Build Something Exceptional</h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Available for Senior Mobile App roles, technical consultations, or end-to-end contract delivery.</p>
-          <div class="w-14 h-1 bg-sky-500 mx-auto rounded-full"></div>
+          <div class="w-16 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 mx-auto rounded-full"></div>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-1">Available for Senior Mobile App roles, technical consultations, or end-to-end contract delivery.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
-          <div class="lg:col-span-5 space-y-4">
+          <div class="lg:col-span-5 space-y-4 reveal-left">
             
             <!-- Direct Phone & WhatsApp Card -->
-            <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-              <div class="flex items-center gap-3 mb-2.5">
-                <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-lg">
+            <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+              <div class="flex items-center gap-3.5 mb-3">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-2xl shadow-sm">
                   📞
                 </div>
                 <div>
-                  <p class="text-[11px] font-mono text-slate-500">Phone & WhatsApp</p>
-                  <a href="tel:+919793953764" class="text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                  <p class="text-[11px] font-mono text-slate-500">Direct Phone & WhatsApp</p>
+                  <a href="tel:+919793953764" class="text-base sm:text-lg font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
                     +91 97939 53764
                   </a>
                 </div>
               </div>
-              <div class="grid grid-cols-2 gap-2 mt-3">
-                <a href="https://wa.me/919793953764" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-1.5 transition-all shadow-xs">
+              <div class="grid grid-cols-2 gap-2 mt-4">
+                <a href="https://wa.me/919793953764" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-1.5 transition-all shadow-md hover:scale-103">
                   <span>💬 WhatsApp</span>
                 </a>
-                <button onclick="copyPhone()" class="text-xs font-mono py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1 transition-all">
+                <button onclick="copyPhone()" class="text-xs font-mono py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1 transition-all hover:scale-103">
                   <span>Copy Number</span>
                 </button>
               </div>
             </div>
 
             <!-- Email Card -->
-            <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-              <div class="flex items-center gap-3 mb-2.5">
-                <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold">
+            <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+              <div class="flex items-center gap-3.5 mb-3">
+                <div class="w-12 h-12 rounded-2xl bg-sky-50 dark:bg-sky-500/10 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold text-2xl shadow-sm">
                   ✉️
                 </div>
                 <div>
-                  <p class="text-[11px] font-mono text-slate-500">Direct Email</p>
-                  <a href="mailto:dnm.dpm@gmail.com" class="text-sm sm:text-base font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">
+                  <p class="text-[11px] font-mono text-slate-500">Direct Inquiries Email</p>
+                  <a href="mailto:dnm.dpm@gmail.com" class="text-base sm:text-lg font-bold text-slate-900 dark:text-white hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">
                     dnm.dpm@gmail.com
                   </a>
                 </div>
               </div>
-              <button onclick="copyEmail()" class="w-full text-xs font-mono py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-sky-700 dark:text-cyan-400 flex items-center justify-center gap-1.5 transition-all">
+              <button onclick="copyEmail()" class="w-full text-xs font-mono py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-sky-700 dark:text-cyan-400 flex items-center justify-center gap-1.5 transition-all hover:scale-102">
                 <span>Copy Email Address</span>
               </button>
             </div>
 
             <!-- Location Card -->
-            <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold">
+            <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-2xl shadow-sm">
                   📍
                 </div>
                 <div>
@@ -685,52 +903,53 @@
               </div>
             </div>
 
-            <div class="glass-card rounded-2xl p-5 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-2.5">
-              <p class="text-xs font-mono uppercase text-slate-500">Official Links</p>
+            <div class="glass-card spotlight-card rounded-3xl p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm space-y-3">
+              <p class="text-xs font-mono uppercase text-slate-500">Official Profiles</p>
               <div class="flex flex-col gap-2">
-                <a href="https://github.com/dnm-tryeno" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 transition-colors">
-                  <span class="flex items-center gap-2">
+                <a href="https://github.com/dnm-tryeno" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 transition-colors">
+                  <span class="flex items-center gap-2.5">
                     <svg class="w-4 h-4 text-sky-600 dark:text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
                     <span>github.com/dnm-tryeno</span>
                   </span>
-                  <span class="text-xs text-slate-400 font-mono">View Repos →</span>
+                  <span class="text-xs text-sky-600 dark:text-cyan-400 font-mono">47 Repos →</span>
                 </a>
 
-                <a href="https://www.linkedin.com/in/dina-nath-maurya-0a738282/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 transition-colors">
-                  <span class="flex items-center gap-2">
+                <a href="https://www.linkedin.com/in/dina-nath-maurya-0a738282/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 transition-colors">
+                  <span class="flex items-center gap-2.5">
                     <svg class="w-4 h-4 text-sky-600 dark:text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.39 9.74v-8.37H5.07v8.37z"/></svg>
                     <span>LinkedIn Profile</span>
                   </span>
-                  <span class="text-xs text-slate-400 font-mono">Connect →</span>
+                  <span class="text-xs text-sky-600 dark:text-cyan-400 font-mono">Connect →</span>
                 </a>
               </div>
             </div>
 
           </div>
 
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+          <!-- Contact Form -->
+          <div class="lg:col-span-7 reveal-right">
+            <div class="glass-card spotlight-card rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
               <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading mb-1.5">Direct Message</h3>
-              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-5">Fill in your inquiry to compose a direct email message to Dina.</p>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-6">Fill in your requirements to compose a direct message to Dina Nath Maurya.</p>
 
-              <form id="contact-form" class="space-y-3.5">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-[11px] font-mono uppercase text-slate-500 mb-1">Your Name</label>
-                    <input type="text" id="form-name" required placeholder="John Doe" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:border-sky-500 focus:outline-none transition-colors">
+                    <label class="block text-[11px] font-mono uppercase text-slate-500 mb-1.5">Your Name</label>
+                    <input type="text" id="form-name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:border-sky-500 focus:outline-none transition-colors">
                   </div>
                   <div>
-                    <label class="block text-[11px] font-mono uppercase text-slate-500 mb-1">Email Address</label>
-                    <input type="email" id="form-email" required placeholder="john@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:border-sky-500 focus:outline-none transition-colors">
+                    <label class="block text-[11px] font-mono uppercase text-slate-500 mb-1.5">Email Address</label>
+                    <input type="email" id="form-email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:border-sky-500 focus:outline-none transition-colors">
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-[11px] font-mono uppercase text-slate-500 mb-1">Project Details</label>
-                  <textarea id="form-message" rows="3" required placeholder="Hi Dina, we are looking for a Flutter specialist to build..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:border-sky-500 focus:outline-none transition-colors"></textarea>
+                  <label class="block text-[11px] font-mono uppercase text-slate-500 mb-1.5">Project Scope / Message</label>
+                  <textarea id="form-message" rows="4" required placeholder="Hi Dina, we are looking for a Senior Flutter Developer to build/scale..." class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm focus:border-sky-500 focus:outline-none transition-colors"></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-sky-600/20 flex items-center justify-center gap-1.5 transition-all">
+                <button type="submit" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-500 hover:to-cyan-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-sky-600/25 flex items-center justify-center gap-2 transition-all hover:scale-102">
                   <span>Send Direct Email</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </button>
@@ -745,34 +964,84 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 relative z-10 bg-white/80 dark:bg-[#070b14]/80 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-500 dark:text-slate-400">
+  <!-- ==========================================================================
+       INTERACTIVE FLOATING BOTTOM NAVIGATION DOCK
+       ========================================================================== -->
+  <nav class="floating-dock" aria-label="Quick Navigation">
+    <a href="#hero" class="dock-item active" title="Top">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <span class="dock-tooltip">Home</span>
+    </a>
+    <a href="#about" class="dock-item" title="About">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      <span class="dock-tooltip">About</span>
+    </a>
+    <a href="#experience" class="dock-item" title="Experience">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span class="dock-tooltip">Experience</span>
+    </a>
+    <a href="#projects" class="dock-item" title="Projects">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+      <span class="dock-tooltip">Projects</span>
+    </a>
+    <a href="#skills" class="dock-item" title="Skills">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+      <span class="dock-tooltip">Skills</span>
+    </a>
+    <a href="#contact" class="dock-item" title="Contact">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span class="dock-tooltip">Contact</span>
+    </a>
+    <div class="w-[1px] h-5 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+    <button onclick="toggleTheme()" class="dock-item" title="Toggle Theme">
+      <span id="dock-theme-icon">☀️</span>
+      <span class="dock-tooltip">Theme</span>
+    </button>
+    <a href="https://wa.me/919793953764" target="_blank" rel="noopener noreferrer" class="dock-item text-emerald-500 hover:text-emerald-400" title="WhatsApp Chat">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.884 2.791.885h.001c3.182 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.771-5.769-5.771zm3.376 8.204c-.149.42-1.021.782-1.401.815-.38.033-.787.054-2.275-.548-1.782-.72-2.909-2.54-3.001-2.659-.092-.12-.724-.963-.724-1.837 0-.874.457-1.304.62-1.482.162-.178.354-.223.473-.223.118 0 .237.001.341.006.11.005.258-.042.404.308.149.356.51 1.244.555 1.334.045.089.074.193.015.312-.059.119-.089.193-.178.297-.089.104-.187.232-.267.312-.089.089-.182.186-.078.364.104.178.463.764.993 1.236.685.609 1.263.798 1.442.887.178.089.282.074.386-.045.104-.119.445-.519.564-.697.119-.178.238-.149.397-.089.159.059 1.009.475 1.182.564.173.089.288.134.331.208.043.074.043.43-.106.85zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.436 5.176L2 22l4.981-1.306C8.423 21.538 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+      <span class="dock-tooltip">WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-10 pb-24 relative z-10 bg-white/80 dark:bg-[#070b14]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500 dark:text-slate-400">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
         <span>© <span id="current-year">2026</span> Dina Nath Maurya. All rights reserved.</span>
       </div>
 
       <div class="flex items-center gap-5">
-        <a href="#hero" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors">Back to Top ↑</a>
+        <a href="#hero" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <span>Back to Top ↑</span>
+        </a>
+        <span>•</span>
+        <a href="https://github.com/dnm-tryeno/dina-portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <span>GitHub Repo</span>
+        </a>
+        <span>•</span>
         <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="hover:text-sky-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1">
-          <span>Vercel Ready</span>
+          <span>Vercel Optimized</span>
           <svg class="w-3.5 h-3.5 inline" fill="currentColor" viewBox="0 0 24 24"><path d="M24 22.525H0l12-21.05 12 21.05z"/></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <!-- PROJECT DETAILS MODAL (Adaptive Mobile & Desktop) -->
-  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm">
+  <!-- ==========================================================================
+       PROJECT DETAILS MODAL (Adaptive Mobile & Desktop)
+       ========================================================================== -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md">
     <div class="modal-content glass rounded-2xl sm:rounded-3xl max-w-xl w-full p-5 sm:p-7 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl max-h-[88vh] overflow-y-auto">
       <div id="modal-content-body">
-        <!-- Injected via main.js -->
+        <!-- Injected dynamically via main.js -->
       </div>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Main JavaScript Engine -->
   <script src="assets/js/main.js"></script>
 </body>
 </html>

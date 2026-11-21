@@ -1,5 +1,9 @@
-/* Custom Design System & Enhancements for Dina Nath Maurya Portfolio */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* ==========================================================================
+   Dina Nath Maurya — Elite Senior Mobile Engineer Portfolio Design System
+   Modern Glassmorphism, Cyber-Glow Aesthetics, High-Performance CSS Animations
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -7,10 +11,12 @@
   --font-mono: 'JetBrains Mono', monospace;
   
   --primary: #0284c7;
-  --primary-glow: rgba(2, 132, 199, 0.2);
+  --primary-rgb: 2, 132, 199;
   --accent: #0ea5e9;
+  --cyan: #06b6d4;
   --violet: #8b5cf6;
   --emerald: #10b981;
+  --amber: #f59e0b;
 }
 
 html {
@@ -26,80 +32,271 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-mono);
 }
 
-/* Custom Scrollbar - Light & Dark */
+/* ==========================================================================
+   Top Scroll Progress Indicator
+   ========================================================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #0284c7, #06b6d4, #8b5cf6, #ec4899);
+  z-index: 100;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.7);
+}
+
+/* ==========================================================================
+   Custom Scrollbar
+   ========================================================================== */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
 html.dark ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #050811;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 4px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 html.dark ::-webkit-scrollbar-thumb {
   background: #1e293b;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #0284c7;
 }
 
-/* Glassmorphism - Light Mode */
+/* ==========================================================================
+   Custom Animated Cursor Follower (Desktop Only)
+   ========================================================================== */
+@media (pointer: fine) {
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.8);
+  }
+
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(14, 165, 233, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.25s ease-out, height 0.25s ease-out, border-color 0.25s ease-out;
+  }
+
+  body.cursor-hover .cursor-dot {
+    width: 14px;
+    height: 14px;
+    background: #8b5cf6;
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.9);
+  }
+
+  body.cursor-hover .cursor-ring {
+    width: 52px;
+    height: 52px;
+    border-color: rgba(139, 92, 246, 0.7);
+    background: rgba(139, 92, 246, 0.08);
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Glassmorphism 2.0 Design System
+   ========================================================================== */
 .glass {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 html.dark .glass {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(11, 17, 33, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(226, 232, 240, 0.9);
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   border-color: rgba(2, 132, 199, 0.4);
-  box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.18), 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 html.dark .glass-card {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: none;
-}
-html.dark .glass-card:hover {
-  background: rgba(15, 23, 42, 0.85);
-  border-color: rgba(6, 182, 212, 0.3);
-  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.25);
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
-/* Floating Animations */
+html.dark .glass-card:hover {
+  background: rgba(17, 26, 48, 0.9);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.3), 0 0 25px 0 rgba(56, 189, 248, 0.1);
+}
+
+/* ==========================================================================
+   Spotlight Dynamic Mouse Glow (Aceternity / Vercel style)
+   ========================================================================== */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    550px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(14, 165, 233, 0.16),
+    transparent 45%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+html.dark .spotlight-card::before {
+  background: radial-gradient(
+    550px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(56, 189, 248, 0.22),
+    transparent 45%
+  );
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Conic Gradient Glowing Rings & Borders
+   ========================================================================== */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+
+.glow-ring-conic {
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    #0284c7,
+    #06b6d4,
+    #8b5cf6,
+    #ec4899,
+    #f59e0b,
+    #10b981,
+    #0284c7
+  );
+  filter: blur(10px);
+  opacity: 0.65;
+  animation: spin-slow 12s linear infinite;
+  z-index: -1;
+}
+
+/* ==========================================================================
+   Marquee Slider (Continuous Tech Stack Ribbon)
+   ========================================================================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   Floating Animations
+   ========================================================================== */
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
 }
 
 @keyframes float-delayed {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(8px) rotate(-1deg); }
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-1.5deg);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.06);
+  }
 }
 
 .animate-float-slow {
@@ -107,39 +304,272 @@ html.dark .glass-card:hover {
 }
 
 .animate-float-delayed {
-  animation: float-delayed 6s ease-in-out infinite 1.2s;
+  animation: float-delayed 6.5s ease-in-out infinite 1.2s;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
 }
 
-/* Gradient Text */
+/* ==========================================================================
+   Shimmer & Glowing Gradients
+   ========================================================================== */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
 .text-gradient-flutter {
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #4338ca 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 40%, #6366f1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 html.dark .text-gradient-flutter {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 40%, #a78bfa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Subtle Geometric Background Patterns */
+.text-shimmer {
+  background: linear-gradient(90deg, #0284c7 0%, #06b6d4 30%, #8b5cf6 60%, #0284c7 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 7s linear infinite;
+}
+html.dark .text-shimmer {
+  background: linear-gradient(90deg, #38bdf8 0%, #22d3ee 30%, #c084fc 60%, #38bdf8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 7s linear infinite;
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* ==========================================================================
+   Cybernetic Background Patterns & Grids
+   ========================================================================== */
 .bg-grid-pattern {
-  background-size: 32px 32px;
+  background-size: 40px 40px;
   background-image: 
     linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
 }
 html.dark .bg-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
-/* Mobile responsive horizontal scroll without scrollbar */
+.bg-dots-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(14, 165, 233, 0.15) 1px, transparent 1px);
+}
+html.dark .bg-dots-pattern {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+}
+
+/* ==========================================================================
+   Scroll Reveal Animations
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* ==========================================================================
+   Interactive Floating Bottom Navigation Dock
+   ========================================================================== */
+.floating-dock {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 45;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 9999px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s;
+}
+
+html.dark .floating-dock {
+  background: rgba(11, 17, 33, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.5), 0 0 20px 0 rgba(14, 165, 233, 0.15);
+}
+
+.dock-item {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: #64748b;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html.dark .dock-item {
+  color: #94a3b8;
+}
+
+.dock-item:hover, .dock-item.active {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.1);
+  transform: scale(1.12);
+}
+
+html.dark .dock-item:hover, html.dark .dock-item.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+.dock-tooltip {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #0f172a;
+  color: #f8fafc;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dock-item:hover .dock-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   Code Terminal Widget
+   ========================================================================== */
+.terminal-window {
+  border-radius: 18px;
+  background: #0b1120;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 35px 0 rgba(14, 165, 233, 0.12);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.terminal-header {
+  background: #070d19;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-tab {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #64748b;
+}
+
+.terminal-tab.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #38bdf8;
+}
+
+/* Syntax highlight colors */
+.syn-kw { color: #c084fc; font-weight: 600; }
+.syn-type { color: #38bdf8; }
+.syn-str { color: #4ade80; }
+.syn-fn { color: #facc15; }
+.syn-comment { color: #64748b; font-style: italic; }
+.syn-num { color: #fb923c; }
+
+/* ==========================================================================
+   No Scrollbar Helper
+   ========================================================================== */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -148,11 +578,13 @@ html.dark .bg-grid-pattern {
   scrollbar-width: none;
 }
 
-/* Interactive modal */
+/* ==========================================================================
+   Interactive Modal Animations
+   ========================================================================== */
 .modal-backdrop {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-backdrop.active {
@@ -161,10 +593,25 @@ html.dark .bg-grid-pattern {
 }
 
 .modal-content {
-  transform: scale(0.96) translateY(8px);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.92) translateY(16px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .modal-backdrop.active .modal-content {
   transform: scale(1) translateY(0);
+}
+
+/* ==========================================================================
+   Mobile Optimization
+   ========================================================================== */
+@media (max-width: 640px) {
+  .floating-dock {
+    bottom: 12px;
+    padding: 4px 8px;
+    gap: 3px;
+  }
+  .dock-item {
+    width: 36px;
+    height: 36px;
+  }
 }

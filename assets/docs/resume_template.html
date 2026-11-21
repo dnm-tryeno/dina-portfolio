@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dina Nath Maurya - Senior Full Stack Developer Resume</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 16mm 15mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 9.3pt;
+      line-height: 1.42;
+    }
+    .header {
+      border-bottom: 2.5px solid #0284c7;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .name-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .name {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .exp-badge {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0284c7;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 3px;
+      margin-bottom: 6px;
+    }
+    .contact-bar {
+      font-size: 8.5pt;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .contact-bar a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 3px;
+      margin-top: 13px;
+      margin-bottom: 8px;
+    }
+    .summary-text {
+      font-size: 9pt;
+      color: #334155;
+      text-align: justify;
+      line-height: 1.45;
+    }
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .skills-category {
+      font-size: 8.8pt;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .skills-category strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .exp-item {
+      margin-bottom: 10px;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+    .exp-company {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .exp-role {
+      font-size: 9.6pt;
+      font-weight: 700;
+      color: #0284c7;
+    }
+    .exp-date {
+      font-size: 8.6pt;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .bullets {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+    .bullets li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 3px;
+      font-size: 8.8pt;
+      color: #334155;
+    }
+    .bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 1px;
+      color: #0284c7;
+      font-weight: bold;
+    }
+    .projects-header {
+      font-size: 9.2pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 8px;
+      margin-bottom: 6px;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+    }
+    .project-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 6px 8px;
+    }
+    .project-title {
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .project-badge {
+      font-size: 7.2pt;
+      font-weight: 700;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 1.5px 5px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+    .project-desc {
+      font-size: 8pt;
+      color: #475569;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+    .metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+    }
+    .metric-num {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #0284c7;
+    }
+    .metric-label {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1 ================= -->
+  <div class="header">
+    <div class="name-row">
+      <h1 class="name">DINA NATH MAURYA</h1>
+      <span class="exp-badge">6.5+ YEARS EXP</span>
+    </div>
+    <div class="title">Senior Full Stack Developer | Mobile, Web & Backend Systems Architect</div>
+    <div class="contact-bar">
+      <span>📍 Remote | Varanasi, UP, India</span>
+      <span>•</span>
+      <span>📞 +91 97939 53764</span>
+      <span>•</span>
+      <span>✉️ dnm.dpm@gmail.com</span>
+    </div>
+    <div class="contact-bar" style="margin-top: 3px;">
+      <span>🌐 Portfolio: <a href="https://dina-portfolio-neon.vercel.app">dina-portfolio-neon.vercel.app</a></span>
+      <span>•</span>
+      <span>💼 LinkedIn: <a href="https://linkedin.com/in/dina-nath-maurya-0a738282">dina-nath-maurya</a></span>
+      <span>•</span>
+      <span>💻 GitHub: <a href="https://github.com/dnm-tryeno">github.com/dnm-tryeno</a></span>
+    </div>
+  </div>
+
+  <div class="section-title">Professional Summary</div>
+  <p class="summary-text">
+    Versatile and results-driven <strong>Senior Full Stack Developer</strong> with <strong>6.5+ years of experience</strong> architecting, engineering, and launching robust digital products across <strong>Mobile (iOS & Android)</strong>, <strong>Web</strong>, and <strong>Backend Cloud Infrastructure</strong>. Proven track record of shipping <strong>9 production apps</strong> to the Apple App Store and Google Play Store, combined with scalable REST APIs, MySQL databases, real-time WebSockets (Socket.io), Agora RTC video streaming, and secure Stripe payment gateways. Extensive international experience collaborating with Japanese enterprise clients (<strong>Del-Qui Japan</strong>) and <strong>Tryeno India</strong> in fast-paced Agile environments, ensuring high concurrency, 99.9% crash-free sessions, and clean maintainable codebases.
+  </p>
+
+  <div class="section-title">Core Technical Stack</div>
+  <div class="skills-grid">
+    <div class="skills-category"><strong>• Frontend & Mobile:</strong> Flutter 3.x, Dart, React Native, React.js, JavaScript (ES6+), HTML5/CSS3, Tailwind CSS, Riverpod, Provider, Clean Architecture, BLoC.</div>
+    <div class="skills-category"><strong>• Backend & Databases:</strong> RESTful API Architecture, Node.js, Express, MySQL, Eloquent ORM, Firebase (Firestore, Auth, Cloud Functions), SQLite, Hive, WebSockets (Socket.io).</div>
+    <div class="skills-category"><strong>• Real-Time & Integrations:</strong> Agora RTC Audio/Video SDK, Socket.io, Stripe Payment Gateway, Razorpay, Google Maps Platform, Live Geolocation Telemetry, FCM Push Notifications.</div>
+    <div class="skills-category"><strong>• Cloud, DevOps & Stores:</strong> Google Play Console, Apple App Store Connect, TestFlight, Vercel, Docker basics, Android SDK, iOS Xcode, Git, GitHub Actions, Bitrise CI/CD.</div>
+  </div>
+
+  <div class="section-title">Professional Experience</div>
+
+  <!-- Tryeno India -->
+  <div class="exp-item">
+    <div class="exp-header">
+      <div>
+        <span class="exp-company">Tryeno India</span> — <span class="exp-role">Senior Full Stack Developer & Mobile Lead</span>
+      </div>
+      <span class="exp-date">June 2021 – Present (Varanasi, India)</span>
+    </div>
+    <ul class="bullets">
+      <li>Architected and developed 7+ commercial cross-platform mobile apps and responsive web tools using Flutter, React Native, and Node.js.</li>
+      <li>Designed and implemented secure REST APIs, JWT authentication middleware, business logic controllers, and relational MySQL schemas.</li>
+      <li>Integrated real-time socket channels, live driver telemetry, in-app digital payments (Stripe/Razorpay), and Agora live audio/video feeds.</li>
+      <li>Managed full release cycles on Google Play Console and Apple App Store Connect: certificates, bundle signing, and store policy compliance.</li>
+      <li>Enforced Clean Architecture, modular state management, and Git workflows, mentoring team members and conducting rigorous code reviews.</li>
+    </ul>
+
+    <div class="projects-header">Commercial Production Apps (Tryeno India):</div>
+    <div class="project-grid">
+      <div class="project-item">
+        <span class="project-title">FurryCat – Tournament Platform</span><span class="project-badge">App Store | Play Store</span>
+        <div class="project-desc">Esports tournament platform with team creation, bracket matchmaking, live expense analytics, and real-time updates.</div>
+      </div>
+      <div class="project-item">
+        <span class="project-title">Jhatpat Electrician – On-Demand</span><span class="project-badge">Play Store</span>
+        <div class="project-desc">Multi-tier service platform with Customer, Technician, and Admin modules, real-time job dispatch, and live geolocation.</div>
+      </div>
+      <div class="project-item">
+        <span class="project-title">ShopKeep POS – Inventory & Billing</span><span class="project-badge">Play Store</span>
+        <div class="project-desc">Point-of-sale inventory system with barcode scanning, automated PDF invoice generation, cloud sync, and role access.</div>
+      </div>
+      <div class="project-item">
+        <span class="project-title">Smart School & Coaching Suite</span><span class="project-badge">Play Store</span>
+        <div class="project-desc">EdTech institutional platform with live attendance tracking, video classroom streaming, study repository, and fee ledger.</div>
+      </div>
+      <div class="project-item">
+        <span class="project-title">UdharKhata – Digital Credit Book</span><span class="project-badge">Play Store</span>
+        <div class="project-desc">Financial credit/debit ledger with automated WhatsApp payment reminder links, customer PDF statements, and daily backup.</div>
+      </div>
+      <div class="project-item">
+        <span class="project-title">Invoice Studio – Quick Billing Maker</span><span class="project-badge">Play Store</span>
+        <div class="project-desc">Fast invoicing engine with multi-currency support, customizable taxes, item catalogs, and direct WhatsApp sharing.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 2 ================= -->
+  <div class="page-break"></div>
+
+  <div class="header" style="margin-bottom: 10px;">
+    <div class="name-row">
+      <h2 style="font-size: 14pt; font-weight: 800; color: #0f172a;">DINA NATH MAURYA</h2>
+      <span style="font-size: 8.5pt; color: #64748b; font-weight: 600;">dnm.dpm@gmail.com • +91 97939 53764</span>
+    </div>
+    <div style="font-size: 9.5pt; font-weight: 700; color: #0284c7;">Senior Full Stack Developer | Mobile, Web & Backend Systems Architect</div>
+  </div>
+
+  <!-- Production Metrics -->
+  <div class="metrics-bar">
+    <div class="metric-card">
+      <div class="metric-num">6.5+</div>
+      <div class="metric-label">Years Production Exp</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">9</div>
+      <div class="metric-label">Live Store Apps</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">13</div>
+      <div class="metric-label">Full-Stack Systems</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">100K+</div>
+      <div class="metric-label">End Users Served</div>
+    </div>
+  </div>
+
+  <div class="section-title">Global Enterprise Experience</div>
+
+  <!-- Del-Qui Japan -->
+  <div class="exp-item">
+    <div class="exp-header">
+      <div>
+        <span class="exp-company">Del-Qui Japan</span> — <span class="exp-role">Senior Full Stack Mobile Engineer (Japanese Enterprise Client)</span>
+      </div>
+      <span class="exp-date">November 2023 – March 2026 (Tokyo, Japan / Remote)</span>
+    </div>
+    <ul class="bullets">
+      <li>Engineered high-concurrency real-time interactive systems under rigorous Japanese software development standards and bi-weekly Agile sprints.</li>
+      <li>Developed interactive multi-participant live video rooms using Agora RTC SDK with seat reservation, muting, interactive gifts, and real-time socket events.</li>
+      <li>Architected an On-Demand Food Delivery dual-app ecosystem (Customer App + Courier Driver App) featuring real-time Google Maps GPS route tracking and Socket.io dispatching.</li>
+      <li>Refactored state management to Riverpod 2.x, optimizing widget rebuilds to achieve consistent 60+ FPS UI rendering and a 99.8% crash-free session rate.</li>
+      <li>Managed production app signing, TestFlight distributions, and Apple App Store / Google Play Store enterprise compliance.</li>
+      <li>Collaborated directly with bilingual project managers, backend architects, and QA leads in cross-border sprint retrospectives.</li>
+    </ul>
+
+    <div class="projects-header">Japanese Enterprise Client Systems (Confidential / Commercial):</div>
+    <div class="project-grid">
+      <div class="project-item">
+        <span class="project-title">Live Video Lounge (Online Drinking App)</span><span class="project-badge">Agora RTC</span>
+        <div class="project-desc">Multi-party virtual video room with seat orchestration, interactive audio controls, user moderation, and synchronized room state.</div>
+      </div>
+      <div class="project-item">
+        <span class="project-title">On-Demand Food Delivery – Customer App</span><span class="project-badge">Stripe & Live GPS</span>
+        <div class="project-desc">Restaurant discovery, custom cart options, Stripe checkout, real-time driver tracking on Google Maps, and order timeline.</div>
+      </div>
+      <div class="project-item" style="grid-column: span 2;">
+        <span class="project-title">On-Demand Food Delivery – Courier Driver App</span><span class="project-badge">Socket.io & Telemetry</span>
+        <div class="project-desc">Courier dispatch application with background GPS telemetry, order acceptance flow, turn-by-turn navigation, and earnings ledger.</div>
+      </div>
+      <div class="project-item" style="grid-column: span 2;">
+        <span class="project-title">Techify Care – Support CRM & Ticketing</span><span class="project-badge">Enterprise Helpdesk</span>
+        <div class="project-desc">Full-cycle customer ticketing and issue tracking CRM with live support chat, automated status notifications, and agent dashboard.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Key Architecture Principles & Best Practices</div>
+  <ul class="bullets">
+    <li><strong>Clean Architecture & SOLID Principles:</strong> Separation of Presentation, Domain, and Data layers for testable, modular, and scalable codebases.</li>
+    <li><strong>State Management Mastery:</strong> Production expertise in Riverpod 2.x, Provider, and BLoC with immutable state models via Freezed.</li>
+    <li><strong>Secure API & Data Pipeline:</strong> Token-based authentication (JWT/OAuth), data sanitization, offline-first caching with Hive/SQLite, and RESTful best practices.</li>
+    <li><strong>CI/CD & Release Automation:</strong> Automated builds, linting, test suites, and streamlined deployment to TestFlight, App Store, and Google Play.</li>
+  </ul>
+
+  <div class="section-title">Education & Credentials</div>
+  <div class="skills-category"><strong>• Bachelor of Arts (B.A.)</strong> — Mahatma Gandhi Kashi Vidyapith (MGKVP) | 2012 – 2015</div>
+  <div class="skills-category"><strong>• Intermediate (12th Grade)</strong> — UP Board | 2010 – 2012 &nbsp;&nbsp;•&nbsp;&nbsp; <strong>High School (10th Grade)</strong> — SSVV | 2009 – 2010</div>
+  <div class="skills-category" style="margin-top: 4px;"><strong>• Languages:</strong> English (Professional Working Proficiency), Hindi (Native)</div>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
-# Dina Nath Maurya — Senior Mobile App Engineer Portfolio
+# Dina Nath Maurya — Senior Full Stack Developer Portfolio
 
-A modern, high-performance, and responsive portfolio website showcasing 6.5+ years of mobile app engineering experience, 15+ production store releases (Apple App Store & Google Play), and scalable cross-platform architectures (Flutter, React Native).
+A modern, high-performance, and responsive portfolio website showcasing 6.5+ years of full-stack engineering experience, 9 production store releases (Apple App Store & Google Play), and scalable cross-platform architectures (Flutter, React Native, Node.js, WebSockets, Agora RTC).
 
 Live Repository: [github.com/dnm-tryeno/dina-portfolio](https://github.com/dnm-tryeno/dina-portfolio)
 
@@ -73,9 +73,9 @@ dina-portfolio/
 
 ---
 
-## 🌟 Verified Production Applications (10 Live Apps + 4 Client Systems)
+## 🌟 Verified Production Applications (9 Live Apps + 4 Client Systems)
 
-### 📱 Live Store Applications (Apple App Store & Google Play):
+### 📱 Live Store Applications (Apple App Store & Google Play - Private Codebase):
 1. **FurryCat – Tournament & Esports Ecosystem** (Live on Apple App Store & Google Play • `com.cricket.captain.expense.mgmt`)
 2. **JHATPAT Service – 24x7 Electrician & Maintenance** (Live on Google Play • `com.service.jhatpat.electrician`)
 3. **Shopkeep – Any Type Shop POS & Inventory** (Live on Google Play • `com.shop.keep.dnm`)
@@ -85,13 +85,12 @@ dina-portfolio/
 7. **TuckTales – Bedtime Stories for Kids** (Live on Google Play • `com.dpm.tucktales`)
 8. **MimiRecall – Japanese JLPT Kanji & Vocab LMS** (Live on Google Play • `com.mimirecall.jlpt`)
 9. **QR Maker – Simple & Fast Barcode Studio** (Live on Google Play • `com.rk.QRmaker`)
-10. **All Video Saver & VidPlayer** (Apple App Store Approved / Ready for Distribution • `com.tryeno.videoplayer`)
 
-### 💼 Commercial Client Systems (Del-Qui Japan & Tryeno India):
-11. **Online Drinking App – Video Room Chat** (Del-Qui Japan • Agora RTC SDK real-time rooms)
-12. **Food Delivery – Japanese Consumer App** (Del-Qui Japan • Google Maps & Socket.io)
-13. **Food Delivery – Courier & Driver Partner App** (Del-Qui Japan • Background Geolocation & Route Navigation)
-14. **Techify Care – Ticket Management App** (Tryeno India Enterprise Partner • SLA Tracking & Chat)
+### 💼 Commercial Client Systems (Del-Qui Japan & Tryeno India - Confidential NDA Protected):
+10. **Online Drinking App – Video Room Chat** (Del-Qui Japan • Agora RTC SDK real-time rooms)
+11. **Food Delivery – Japanese Consumer App** (Del-Qui Japan • Google Maps & Socket.io)
+12. **Food Delivery – Courier & Driver Partner App** (Del-Qui Japan • Background Geolocation & Route Navigation)
+13. **Techify Care – Ticket Management App** (Tryeno India Enterprise Partner • SLA Tracking & Chat)
 
 ---
 

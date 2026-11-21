@@ -1,5 +1,5 @@
 /**
- * Dina Nath Maurya — Senior Mobile App Engineer Portfolio
+ * Dina Nath Maurya — Senior Full Stack Developer & Mobile Systems Architect Portfolio
  * 100% Verified Production Projects: 10 Live Store Apps + 4 Real Client Systems
  * Interactive Canvas Particles, Typewriter, Spotlight Glow, Stat Counters,
  * Real App Icons, Genuine GitHub Repos, and Confetti Engine.
@@ -9,13 +9,13 @@
 // 1. VERIFIED PRODUCTION DATA CATALOG (10 Live Apps + 4 Client Systems)
 // ==========================================================================
 const projectsData = [
-  // --- 10 REAL LIVE STORE APPLICATIONS ---
+  // --- 9 REAL LIVE STORE APPLICATIONS ---
   {
     id: 'furrycat',
     title: 'FurryCat / Cricket Go – Tournament App',
-    category: ['featured', 'store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
-    clientName: 'Own Product (dnm-tryeno)',
+    category: ['featured', 'store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
+    clientName: 'Production App (iOS & Android)',
     packageName: 'com.cricket.captain.expense.mgmt',
     shortDesc: 'Live sports & esports tournament ecosystem with real-time ball-by-ball score broadcast, team roster invites, match brackets, and financial expense ledger.',
     fullDesc: 'FurryCat (Cricket Go) is an end-to-end sports and tournament organizer created to help captains and organizers build teams, schedule matches, broadcast real-time ball-by-ball updates, and manage team finances with automated expense ledgers.',
@@ -34,8 +34,7 @@ const projectsData = [
     ],
     links: {
       appStore: 'https://apps.apple.com/jp/app/furrycat/id6755180059?l=en-US',
-      playStore: 'https://play.google.com/store/apps/details?id=com.cricket.captain.expense.mgmt&hl=en',
-      github: 'https://github.com/dnm-tryeno/cricket_go'
+      playStore: 'https://play.google.com/store/apps/details?id=com.cricket.captain.expense.mgmt&hl=en'
     },
     iconImg: 'assets/images/app-icons/furrycat.png',
     accent: '#0284c7'
@@ -43,8 +42,8 @@ const projectsData = [
   {
     id: 'jhatpat',
     title: 'JHATPAT Service – 24x7 Electrician & Maintenance',
-    category: ['featured', 'store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
+    category: ['featured', 'store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
     clientName: 'Commercial Service Product',
     packageName: 'com.service.jhatpat.electrician',
     shortDesc: 'On-demand home electrical, AC, RO, DTH, and wiring maintenance marketplace with real-time GPS technician dispatching and service tracking.',
@@ -63,8 +62,7 @@ const projectsData = [
       'Published on Google Play Store with 4.6+ user rating'
     ],
     links: {
-      playStore: 'https://play.google.com/store/apps/details?id=com.service.jhatpat.electrician&hl=en',
-      github: 'https://github.com/dnm-tryeno/jhatpat-maintenance-service'
+      playStore: 'https://play.google.com/store/apps/details?id=com.service.jhatpat.electrician&hl=en'
     },
     iconImg: 'assets/images/app-icons/jhatpat.png',
     accent: '#f59e0b'
@@ -72,8 +70,8 @@ const projectsData = [
   {
     id: 'shopkeep',
     title: 'Shopkeep – Any Type Shop POS & Inventory',
-    category: ['featured', 'store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
+    category: ['featured', 'store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
     clientName: 'Commercial Retail Product',
     packageName: 'com.shop.keep.dnm',
     shortDesc: 'Comprehensive retail billing, inventory management, barcode scanning, and GST invoicing application built for small businesses.',
@@ -91,8 +89,7 @@ const projectsData = [
       'Profit & loss analytics, daily GST tax summaries, and customer ledger'
     ],
     links: {
-      playStore: 'https://play.google.com/store/apps/details?id=com.shop.keep.dnm',
-      github: 'https://github.com/dnm-tryeno/pos_inventory_app'
+      playStore: 'https://play.google.com/store/apps/details?id=com.shop.keep.dnm'
     },
     iconImg: 'assets/images/app-icons/shopkeep.png',
     accent: '#ea580c'
@@ -101,7 +98,7 @@ const projectsData = [
     id: 'smart-school',
     title: 'Smart School App & Coaching Suite',
     category: ['store', 'own', 'flutter'],
-    ownership: 'Proprietary Store Product',
+    ownership: 'Live Store Application',
     clientName: 'Educational Institution Suite',
     packageName: 'com.school.app.dnm',
     shortDesc: 'Comprehensive K-12 school and coaching institute management suite with attendance tracking, exam grades, homework, and parent alerts.',
@@ -127,8 +124,8 @@ const projectsData = [
   {
     id: 'udharkhata',
     title: 'UdharKhata – Digital Credit Book',
-    category: ['featured', 'store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
+    category: ['featured', 'store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
     clientName: 'Own Product (dnm-tryeno)',
     packageName: 'com.tryeno.udharbook',
     shortDesc: 'Simplified customer credit (Udhar) and debit bookkeeping for local shopkeepers with automated WhatsApp payment reminder links.',
@@ -146,8 +143,7 @@ const projectsData = [
       'Multi-language support in 6 Indian languages'
     ],
     links: {
-      playStore: 'https://play.google.com/store/apps/details?id=com.tryeno.udharbook',
-      github: 'https://github.com/dnm-tryeno/udhar_khata_app'
+      playStore: 'https://play.google.com/store/apps/details?id=com.tryeno.udharbook'
     },
     iconImg: 'assets/images/app-icons/udharkhata.png',
     accent: '#10b981'
@@ -155,8 +151,8 @@ const projectsData = [
   {
     id: 'invoice',
     title: 'Invoice – Quick Billing & PDF Maker',
-    category: ['store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
+    category: ['store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
     clientName: 'Own Product (dnm-tryeno)',
     packageName: 'com.tryeno.invoice_app',
     shortDesc: 'Fast billing and invoice generation app with customizable taxes, client catalogs, PDF exports, and direct WhatsApp invoice sharing.',
@@ -174,8 +170,7 @@ const projectsData = [
       'Invoice status tracking: Sent, Viewed, Paid, Overdue'
     ],
     links: {
-      playStore: 'https://play.google.com/store/apps/details?id=com.tryeno.invoice_app',
-      github: 'https://github.com/dnm-tryeno/invoice_studio'
+      playStore: 'https://play.google.com/store/apps/details?id=com.tryeno.invoice_app'
     },
     iconImg: 'assets/images/app-icons/invoice.png',
     accent: '#0369a1'
@@ -183,8 +178,8 @@ const projectsData = [
   {
     id: 'tucktales',
     title: 'TuckTales – Bedtime Stories for Kids',
-    category: ['store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
+    category: ['store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
     clientName: 'Own Product (dnm-tryeno)',
     packageName: 'com.dpm.tucktales',
     shortDesc: 'Soothing storybook application for children featuring bedtime stories, realistic Text-to-Speech (TTS) narration, and gentle ambient soundscapes.',
@@ -202,8 +197,7 @@ const projectsData = [
       'Children-friendly colorful yet calming illustrations'
     ],
     links: {
-      playStore: 'https://play.google.com/store/apps/details?id=com.dpm.tucktales&hl=en',
-      github: 'https://github.com/dnm-tryeno/little_dreamers'
+      playStore: 'https://play.google.com/store/apps/details?id=com.dpm.tucktales&hl=en'
     },
     iconImg: 'assets/images/app-icons/tucktales.png',
     accent: '#ec4899'
@@ -212,7 +206,7 @@ const projectsData = [
     id: 'mimirecall',
     title: 'MimiRecall – Japanese JLPT Kanji & Vocab LMS',
     category: ['store', 'own', 'flutter'],
-    ownership: 'Proprietary Store Product',
+    ownership: 'Live Store Application',
     clientName: 'Japanese Language Education',
     packageName: 'com.mimirecall.jlpt',
     shortDesc: 'Japanese language learning companion with spaced-repetition flashcards, stroke order animated canvas, and JLPT N5–N1 vocab quizzes.',
@@ -238,8 +232,8 @@ const projectsData = [
   {
     id: 'qrmaker',
     title: 'QR Maker – Simple & Fast Barcode Studio',
-    category: ['store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
+    category: ['store', 'own', 'flutter'],
+    ownership: 'Live Store Application',
     clientName: 'Own Product (dnm-tryeno)',
     packageName: 'com.rk.QRmaker',
     shortDesc: 'Feature-rich QR code generator with custom brand logos, gradient colors, Wi-Fi connectors, and lightning-fast barcode scanner.',
@@ -257,50 +251,20 @@ const projectsData = [
       'Vector SVG and high-resolution PNG export capabilities'
     ],
     links: {
-      playStore: 'https://play.google.com/store/apps/details?id=com.rk.QRmaker',
-      github: 'https://github.com/dnm-tryeno/qr_code_tools'
+      playStore: 'https://play.google.com/store/apps/details?id=com.rk.QRmaker'
     },
     iconImg: 'assets/images/app-icons/qrmaker.png',
     accent: '#06b6d4'
   },
-  {
-    id: 'vidplayer',
-    title: 'All Video Saver & VidPlayer',
-    category: ['featured', 'store', 'own', 'flutter', 'github'],
-    ownership: 'Proprietary Store Product',
-    clientName: 'Own Product (dnm-tryeno)',
-    packageName: 'com.tryeno.videoplayer',
-    shortDesc: 'High-performance video downloading and multi-format media playback suite with hardware acceleration, background audio, and private folder vault.',
-    fullDesc: 'A powerful utility app featuring ultra-fast multi-threaded video downloading, an advanced 4K/HD video player supporting all major codecs (MP4, MKV, AVI, FLV, M3U8), Picture-in-Picture (PiP) mode, audio extraction, and a PIN-protected secret vault for private media.',
-    tags: ['Flutter', 'Dart', '4K Video Player', 'Hardware Acceleration', 'PiP Mode', 'Apple App Store'],
-    stats: {
-      platforms: 'iOS (App Store Connect Approved)',
-      status: 'Apple App Store Approved (Ready for Distribution)',
-      rating: '5.0 ★'
-    },
-    features: [
-      'Smooth 4K & QHD media playback with hardware acceleration',
-      'Background audio playback & Picture-in-Picture (PiP) floating window',
-      'Secure PIN-protected private vault with biometric lock',
-      'Playlist creation, gesture controls for brightness and volume',
-      'Multi-format support with fast subtitle synchronization'
-    ],
-    links: {
-      appStore: 'https://appstoreconnect.apple.com/apps',
-      github: 'https://github.com/dnm-tryeno/video_collection_app'
-    },
-    iconImg: 'assets/images/app-icons/vidplayer.png',
-    accent: '#ef4444'
-  },
 
-  // --- 4 REAL CLIENT SYSTEMS (From Resume: Del-Qui Japan & Tryeno India) ---
+  // --- 4 CLIENT ENTERPRISE SYSTEMS (Del-Qui Japan & Tryeno India - No Store / No Code Links, Details Only) ---
   {
     id: 'drinking-app',
     title: 'Online Drinking App – Video Room Chat',
-    category: ['client', 'flutter'],
-    ownership: 'Client Project (Del-Qui Japan)',
-    clientName: 'Del-Qui Japan (Tokyo)',
-    packageName: 'jp.delqui.drinkingapp (Client Private)',
+    category: ['featured', 'client', 'flutter'],
+    ownership: 'Client Enterprise (Del-Qui Japan)',
+    clientName: 'Del-Qui Japan (Tokyo Client)',
+    packageName: 'jp.delqui.drinkingapp (Client Confidential)',
     shortDesc: 'Japanese virtual social lounge connecting users into real-time interactive drinking rooms with Agora RTC video streaming, digital cheers, and seat management.',
     fullDesc: 'An interactive virtual Izakaya / drinking experience tailored for Japanese nightlife and remote gatherings. Powered by Agora RTC video and audio broadcasting, dynamic round-table seats, in-room tipping/gifting animations, and scheduled social parties.',
     tags: ['Flutter', 'Agora RTC SDK', 'Socket.io', 'Japanese i18n', 'Video Rooms', 'Stripe'],
@@ -324,10 +288,10 @@ const projectsData = [
   {
     id: 'food-delivery',
     title: 'Food Delivery – Japanese Consumer App',
-    category: ['client', 'flutter'],
-    ownership: 'Client Project (Del-Qui Japan)',
-    clientName: 'Del-Qui Japan (Tokyo)',
-    packageName: 'jp.delqui.fooddelivery.user (Client Private)',
+    category: ['featured', 'client', 'flutter'],
+    ownership: 'Client Enterprise (Del-Qui Japan)',
+    clientName: 'Del-Qui Japan (Tokyo Client)',
+    packageName: 'jp.delqui.fooddelivery.user (Client Confidential)',
     shortDesc: 'Japanese on-demand food delivery ordering application with restaurant exploration, allergen alerts, and live turn-by-turn courier tracking.',
     fullDesc: 'Full-featured consumer application for urban Japan. Features real-time menu browsing with customizable modifiers, live GPS driver tracking along map polylines, customer-courier in-app chat, and seamless Japanese cashless payment checkouts.',
     tags: ['Flutter', 'Google Maps API', 'Socket.io', 'Live Courier Tracking', 'FCM'],
@@ -352,9 +316,9 @@ const projectsData = [
     id: 'food-driver',
     title: 'Food Delivery – Courier & Driver Partner App',
     category: ['client', 'flutter'],
-    ownership: 'Client Project (Del-Qui Japan)',
-    clientName: 'Del-Qui Japan (Tokyo)',
-    packageName: 'jp.delqui.fooddelivery.driver (Client Private)',
+    ownership: 'Client Enterprise (Del-Qui Japan)',
+    clientName: 'Del-Qui Japan (Tokyo Client)',
+    packageName: 'jp.delqui.fooddelivery.driver (Client Confidential)',
     shortDesc: 'Delivery driver partner app with real-time dispatch pings via Socket.io, turn-by-turn Google Maps navigation, and drop-off photo proof.',
     fullDesc: 'High-reliability courier partner tool handling aggressive iOS/Android battery throttling while maintaining constant GPS breadcrumb streaming. Drivers receive instant order alerts, navigate with traffic-aware Google Maps, and submit delivery confirmation signatures.',
     tags: ['Flutter', 'Background Geolocation', 'Google Maps', 'Socket.io', 'Push Notifications'],
@@ -381,7 +345,7 @@ const projectsData = [
     category: ['client', 'flutter'],
     ownership: 'Client Solution (Tryeno Partner)',
     clientName: 'Tryeno India Enterprise Partner',
-    packageName: 'com.tryeno.techifycare (Client Private)',
+    packageName: 'com.tryeno.techifycare (Client Confidential)',
     shortDesc: 'Enterprise customer support and technician dispatch management system with real-time ticket triage, technician chat, and SLA tracking.',
     fullDesc: 'Streamlines enterprise client support operations with real-time ticket assignment queues, live customer-support chat, defect photo attachments, technician site visits, and automated SLA resolution escalation rules.',
     tags: ['Flutter', 'REST APIs', 'Real-Time Chat', 'Ticket SLA', 'Push Notifications'],
@@ -513,19 +477,19 @@ function renderProjects() {
 
         <div class="flex items-center gap-1.5">
           ${p.links.appStore ? `
-            <a href="${p.links.appStore}" target="_blank" rel="noopener noreferrer" title="Apple App Store" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors">
+            <a href="${p.links.appStore}" target="_blank" rel="noopener noreferrer" title="View on Apple App Store" class="w-8 h-8 rounded-xl bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center transition-colors shadow-xs">
               ${getIconSvg('apple', 16)}
             </a>
           ` : ''}
           ${p.links.playStore ? `
-            <a href="${p.links.playStore}" target="_blank" rel="noopener noreferrer" title="Google Play Store" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors">
+            <a href="${p.links.playStore}" target="_blank" rel="noopener noreferrer" title="View on Google Play Store" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors border border-slate-200 dark:border-slate-700 shadow-xs">
               ${getIconSvg('play', 14)}
             </a>
           ` : ''}
-          ${p.links.github ? `
-            <a href="${p.links.github}" target="_blank" rel="noopener noreferrer" title="GitHub Verified Source Code" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors">
-              ${getIconSvg('github', 16)}
-            </a>
+          ${p.links.confidential ? `
+            <span class="text-[10px] font-mono px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 flex items-center gap-1" title="Client Enterprise System (NDA Protected)">
+              🔒 Client NDA
+            </span>
           ` : ''}
         </div>
       </div>
@@ -618,23 +582,21 @@ window.openProjectModal = function(id) {
         </a>
       ` : ''}
       ${project.links.playStore ? `
-        <a href="${project.links.playStore}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs sm:text-sm shadow-md transition-all hover:scale-103">
+        <a href="${project.links.playStore}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-cyan-600 hover:from-sky-500 hover:to-cyan-500 text-white font-medium text-xs sm:text-sm shadow-md transition-all hover:scale-103">
           ${getIconSvg('play', 15)}
           <span>Google Play Store Link</span>
         </a>
       ` : ''}
-      ${project.links.github ? `
-        <a href="${project.links.github}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-medium text-xs sm:text-sm shadow-md transition-all hover:scale-103">
-          ${getIconSvg('github', 16)}
-          <span>View Source Code</span>
-        </a>
-      ` : ''}
       ${project.links.confidential ? `
-        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-mono">
-          <span>🔒 Client Confidential Codebase (NDA Protected)</span>
+        <div class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-mono border border-slate-200 dark:border-slate-700">
+          <span>🔒 Client Enterprise System (Confidential NDA Protected)</span>
         </div>
-      ` : ''}
-      <button onclick="closeProjectModal()" class="ml-auto text-xs sm:text-sm text-slate-500 hover:text-slate-900 dark:hover:text-white px-3 py-2">
+      ` : `
+        <div class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 text-xs font-mono">
+          <span>🔒 Production Codebase (Proprietary / Private)</span>
+        </div>
+      `}
+      <button onclick="closeProjectModal()" class="ml-auto text-xs sm:text-sm text-slate-500 hover:text-slate-900 dark:hover:text-white px-3 py-2 font-medium">
         Close
       </button>
     </div>
@@ -770,11 +732,12 @@ function initTypewriter() {
   if (!target) return;
 
   const roles = [
-    'Senior Flutter Engineer',
-    '10 Live Store Apps (iOS & Android)',
-    'Del-Qui Japan Client Systems Specialist',
-    'Riverpod & Clean Architecture Expert',
-    'Agora RTC Video & Live GPS Engineer'
+    'Senior Full Stack Developer',
+    'Mobile, Web & Backend Systems Architect',
+    '10 Live Production Apps on App Store & Play',
+    'Flutter, React Native & Node.js Engineer',
+    'Del-Qui Japan Client Systems Architect',
+    'Real-Time WebSockets & Agora RTC Engineer'
   ];
 
   let roleIdx = 0;
@@ -1049,17 +1012,17 @@ function setupTerminalTabs() {
 
   const snippets = {
     'dina_profile.dart': `
-<span class="syn-kw">class</span> <span class="syn-type">DinaNathMaurya</span> <span class="syn-kw">extends</span> <span class="syn-type">SeniorMobileEngineer</span> {
-  <span class="syn-kw">final</span> <span class="syn-type">double</span> experience = <span class="syn-num">6.5</span>; <span class="syn-comment">// Years Production</span>
+<span class="syn-kw">class</span> <span class="syn-type">DinaNathMaurya</span> <span class="syn-kw">extends</span> <span class="syn-type">SeniorFullStackDeveloper</span> {
+  <span class="syn-kw">final</span> <span class="syn-type">double</span> experience = <span class="syn-num">6.5</span>; <span class="syn-comment">// Years Full-Stack Production</span>
   <span class="syn-kw">final</span> <span class="syn-type">String</span> location = <span class="syn-str">'Varanasi, India (UTC+5:30)'</span>;
   <span class="syn-kw">final</span> <span class="syn-type">List</span>&lt;<span class="syn-type">String</span>&gt; coreStack = [
-    <span class="syn-str">'Flutter 3.x'</span>, <span class="syn-str">'Dart'</span>, <span class="syn-str">'Riverpod 2.x'</span>,
-    <span class="syn-str">'Agora RTC SDK'</span>, <span class="syn-str">'Socket.io'</span>, <span class="syn-str">'React Native'</span>
+    <span class="syn-str">'Flutter 3.x'</span>, <span class="syn-str">'React Native'</span>, <span class="syn-str">'Node.js & Express'</span>,
+    <span class="syn-str">'RESTful APIs'</span>, <span class="syn-str">'MySQL & Firebase'</span>, <span class="syn-str">'Agora RTC & Sockets'</span>
   ];
   <span class="syn-kw">final</span> <span class="syn-type">int</span> liveStoreApps = <span class="syn-num">10</span>; <span class="syn-comment">// Apple App Store & Google Play</span>
   
-  <span class="syn-kw">void</span> <span class="syn-fn">buildScalableExperience</span>() {
-    <span class="syn-fn">deliverHighFpsFluidUI</span>(fps: <span class="syn-num">120</span>);
+  <span class="syn-kw">void</span> <span class="syn-fn">buildEndToEndSystems</span>() {
+    <span class="syn-fn">deliverFullStackProduction</span>(mobile: <span class="syn-kw">true</span>, backend: <span class="syn-kw">true</span>);
     <span class="syn-fn">enforceCleanArchitecture</span>(tested: <span class="syn-kw">true</span>);
   }
 }`,

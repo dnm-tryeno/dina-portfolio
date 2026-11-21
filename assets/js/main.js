@@ -1144,10 +1144,10 @@ function setupFilters() {
 }
 
 // ==========================================================================
-// 12. THEME MANAGEMENT (Default: Dark for Cyber Look, easily toggled)
+// 12. THEME MANAGEMENT (Default: Clean Crisp Light Theme, easily toggled)
 // ==========================================================================
 window.initTheme = function() {
-  const savedTheme = localStorage.getItem('theme') || 'dark';
+  const savedTheme = localStorage.getItem('theme') || 'light';
   applyTheme(savedTheme);
 };
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -18,13 +18,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
-  <!-- Prevent theme flash script (Default: Dark Cyber Theme) -->
+  <!-- Prevent theme flash script (Default: Clean Light Theme) -->
   <script>
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
+    if (savedTheme === 'dark') {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   </script>
 
@@ -112,7 +112,7 @@
         
         <!-- Light / Dark Theme Toggle Button -->
         <button onclick="toggleTheme()" id="theme-toggle-btn" title="Toggle Light / Dark Mode" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 flex items-center justify-center transition-all text-base shadow-xs hover:scale-105">
-          <span id="theme-toggle-icon">☀️</span>
+          <span id="theme-toggle-icon">🌙</span>
         </button>
 
         <button onclick="copyEmail()" class="hidden lg:flex text-xs font-mono px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-sky-400 text-slate-700 dark:text-slate-300 items-center gap-1.5 transition-all shadow-xs hover:scale-103">
@@ -178,7 +178,7 @@
           </a>
         </div>
         <button onclick="toggleTheme()" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200">
-          <span id="mobile-theme-toggle-icon">☀️</span>
+          <span id="mobile-theme-toggle-icon">🌙</span>
           <span id="theme-label">Switch Theme</span>
         </button>
         <button onclick="copyPhone()" class="w-full text-center text-xs font-mono py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
@@ -994,7 +994,7 @@
     </a>
     <div class="w-[1px] h-5 bg-slate-200 dark:bg-slate-700 mx-1"></div>
     <button onclick="toggleTheme()" class="dock-item" title="Toggle Theme">
-      <span id="dock-theme-icon">☀️</span>
+      <span id="dock-theme-icon">🌙</span>
       <span class="dock-tooltip">Theme</span>
     </button>
     <a href="https://wa.me/919793953764" target="_blank" rel="noopener noreferrer" class="dock-item text-emerald-500 hover:text-emerald-400" title="WhatsApp Chat">

@@ -58,7 +58,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <!-- Custom Design System Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.4">
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#070b14] text-slate-800 dark:text-slate-100 min-h-screen selection:bg-sky-500 selection:text-white relative overflow-x-hidden transition-colors duration-300">
 
@@ -83,7 +83,7 @@
       <!-- Brand / Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
         <div class="relative w-11 h-11 rounded-2xl p-[2px] bg-gradient-to-tr from-sky-500 via-cyan-400 to-indigo-500 shadow-md shrink-0 transition-transform group-hover:scale-105 duration-300">
-          <img src="assets/images/dina-profile.png?v=2.2" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-[14px]">
+          <img src="assets/images/dina-profile.png?v=2.4" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-[14px]">
           <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#070b14] animate-pulse"></span>
         </div>
         <div>
@@ -268,52 +268,70 @@
 
         <!-- Profile Avatar & Badges Showcase -->
         <div class="lg:col-span-5 flex flex-col items-center justify-center order-1 lg:order-2 reveal-scale">
-          <div class="relative w-72 sm:w-80 md:w-88 aspect-square mb-6">
+          <div class="relative w-72 sm:w-80 aspect-[4/5] mb-5 profile-showcase-container group">
             
-            <!-- Conic Rotating Glow Ring -->
-            <div class="glow-ring-conic rounded-3xl"></div>
+            <!-- Dynamic Radiant Ambient Backlight Aura -->
+            <div class="profile-ambient-glow"></div>
 
-            <!-- Profile Image Container -->
-            <div class="w-full h-full rounded-3xl p-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden group">
-              <img src="assets/images/dina-profile.png?v=2.2" alt="Dina Nath Maurya" class="w-full h-full object-cover rounded-2xl group-hover:scale-103 transition-transform duration-500">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <!-- Stylist Cyber Gradient Frame (2px Neon Contour, Zero Harsh White Line) -->
+            <div class="w-full h-full profile-cyber-card">
+              <div class="profile-inner-frame">
+                <!-- Tech HUD Reticle Corners -->
+                <span class="hud-corner hud-corner-tl"></span>
+                <span class="hud-corner hud-corner-tr"></span>
+                <span class="hud-corner hud-corner-bl"></span>
+                <span class="hud-corner hud-corner-br"></span>
 
-              <!-- Overlay Tag -->
-              <div class="absolute bottom-3 left-3 right-3 p-3 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/40 dark:border-slate-800 flex items-center justify-between shadow-lg">
-                <div>
-                  <p class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white font-heading">Dina Nath Maurya</p>
-                  <p class="text-[10px] text-sky-600 dark:text-cyan-400 font-mono">Senior Lead • Tryeno & Del-Qui Japan</p>
+                <!-- Real Portrait Photo (Zero Border Artifacts) -->
+                <img src="assets/images/dina-profile.png?v=2.4" alt="Dina Nath Maurya" class="profile-img-styled">
+
+                <!-- Smooth Cinematic Vignette at Base -->
+                <div class="profile-bottom-vignette"></div>
+
+                <!-- Integrated Bottom Identity Strip (Placed gently below neckline, never touching face) -->
+                <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between z-10 shadow-xl">
+                  <div class="flex items-center gap-2.5">
+                    <span class="relative flex h-2.5 w-2.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    <div>
+                      <p class="text-xs sm:text-sm font-bold text-white font-heading leading-tight">Dina Nath Maurya</p>
+                      <p class="text-[10px] text-cyan-300 font-mono">Senior Flutter Lead • 6.5+ Yrs</p>
+                    </div>
+                  </div>
+                  <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                    VERIFIED
+                  </span>
                 </div>
-                <span class="text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-cyan-300 border border-sky-300 dark:border-cyan-800">
-                  LEAD
-                </span>
               </div>
             </div>
 
-            <!-- Floating Badge 1 (Flutter) -->
-            <div class="absolute -top-3 -left-3 sm:-left-4 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-2.5 animate-float-slow backdrop-blur-md">
-              <span class="text-base">⚡</span>
+            <!-- Floating Glass HUD Chips (Positioned safely outside photo boundaries) -->
+            <!-- Chip 1: Architecture (Top-Left) -->
+            <div class="glass-hud-chip -top-3.5 -left-3 sm:-left-5 animate-float-slow">
+              <span class="w-6 h-6 rounded-lg bg-sky-500/15 text-sky-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xs">⚡</span>
               <div class="text-left">
-                <p class="text-[9px] text-slate-400 font-mono leading-none">Core</p>
-                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Flutter 3.x & Dart</p>
+                <p class="text-[9px] text-slate-400 font-mono leading-none">Architecture</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Flutter 3.x Lead</p>
               </div>
             </div>
 
-            <!-- Floating Badge 2 (Shipped Apps) -->
-            <div class="absolute -bottom-3 -left-2 sm:-left-3 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-2.5 animate-float-delayed backdrop-blur-md">
-              <span class="text-base">🚀</span>
+            <!-- Chip 2: Global Client (Top-Right) -->
+            <div class="glass-hud-chip -top-3.5 -right-3 sm:-right-5 animate-float-delayed">
+              <span class="w-6 h-6 rounded-lg bg-indigo-500/15 flex items-center justify-center text-xs">🇯🇵</span>
               <div class="text-left">
-                <p class="text-[9px] text-slate-400 font-mono leading-none">Stores</p>
+                <p class="text-[9px] text-slate-400 font-mono leading-none">Global Client</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Del-Qui Japan</p>
+              </div>
+            </div>
+
+            <!-- Chip 3: Production (Bottom-Right, floated outside) -->
+            <div class="glass-hud-chip -bottom-3.5 -right-3 sm:-right-5 animate-float-slow">
+              <span class="w-6 h-6 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">🚀</span>
+              <div class="text-left">
+                <p class="text-[9px] text-slate-400 font-mono leading-none">Production</p>
                 <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">10 Live Store Apps</p>
-              </div>
-            </div>
-
-            <!-- Floating Badge 3 (Agora RTC) -->
-            <div class="absolute top-1/2 -right-3 sm:-right-5 px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-2.5 animate-float-slow backdrop-blur-md">
-              <span class="text-base">🎥</span>
-              <div class="text-left">
-                <p class="text-[9px] text-slate-400 font-mono leading-none">Real-Time</p>
-                <p class="text-xs font-bold text-slate-800 dark:text-white font-heading">Agora RTC & Sockets</p>
               </div>
             </div>
 
@@ -1042,6 +1060,6 @@
   </div>
 
   <!-- Main JavaScript Engine -->
-  <script src="assets/js/main.js?v=2.2"></script>
+  <script src="assets/js/main.js?v=2.4"></script>
 </body>
 </html>
